@@ -26,17 +26,21 @@ This platform allows premium brand advertisers to simulate, plan, and optimize h
 
 ```tree
 /triooh
-├── server.js        # Node.js Express server, JSON routing & database engine
-├── package.json     # Node project manifest, dependencies, and launch scripts
-├── index.html       # Primary entrypoint & semantic HTML5 template
-├── styles.css       # consolidated CSS design system, grid, custom properties & keyframe animations
-├── app.js           # Platform interactive controllers, planning calculations & fetch API transitions
-├── campaigns.json   # Persistent JSON file storing submitted brief proposals
-├── logo.png         # Main horizontal company brand asset (1920x1080)
-├── favicon.png      # Perfect 1:1 ratio transparent square logo for high-res browser tabs
-├── favicon.ico      # Fallback ICO bundle (16px to 128px) for native browser compatibility
-├── robots.txt       # Production crawler guide & sitemap pointer
-└── sitemap.xml      # SEO search indexing map file
+├── public/                 # All public-facing static assets served by Nginx or Express
+│   ├── index.html          # Semantic HTML5 template
+│   ├── styles.css          # consolidate CSS design system & animations
+│   ├── app.js              # Interactive controllers & live API fetch calls
+│   ├── logo.png            # Main company brand asset
+│   ├── favicon.png         # High-resolution tab favicon PNG
+│   ├── favicon.ico         # Backward-compatible favicon ICO
+│   ├── robots.txt          # Crawler instructions
+│   └── sitemap.xml         # Crawler index map sitemap
+├── server.js               # Node.js Express server entrypoint & REST router
+├── package.json            # Node project configuration & dependency list
+├── package-lock.json       # Strict NPM locked package tree
+├── campaigns.json          # Persistent JSON database storing campaign proposals
+├── .gitignore              # Production-grade Git ignore filters
+└── README.md               # Production-grade developer guidelines
 ```
 
 ---
