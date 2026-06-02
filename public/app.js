@@ -1,6 +1,14 @@
 // Initialize Lucide Icons
 lucide.createIcons();
 
+// --- INTERACTIVE BACKGROUND MOUSE TRACKING ---
+window.addEventListener('mousemove', (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+  document.documentElement.style.setProperty('--mouse-x', `${x}px`);
+  document.documentElement.style.setProperty('--mouse-y', `${y}px`);
+});
+
 // --- 1. HEADER SCROLL EFFECT ---
 const header = document.getElementById('main-header');
 window.addEventListener('scroll', () => {
