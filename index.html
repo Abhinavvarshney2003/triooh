@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TRIOOH is a technology-driven, data-backed Out-of-Home (OOH) advertising agency in India. Plan, launch, and measure premium digital & physical outdoor campaigns.">
+  <meta name="keywords" content="OOH Advertising, DOOH India, Digital Billboards, Triooh, Outdoor Media Planning, Advertising Agency Mumbai Delhi">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TRIOOH | Technology-Driven OOH & DOOH Advertising Agency">
+  <meta property="og:description" content="Transforming Out-of-Home advertising with advanced data analytics, smart media planning, and immersive digital outdoor executions.">
+  <meta property="og:image" content="./logo.png">
+
+  <title>TRIOOH | Technology-Driven OOH & DOOH Advertising Agency</title>
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+  <!-- Styling Sheet -->
+  <link rel="stylesheet" href="./styles.css">
+  
+  <!-- Lucide Icons (Loaded via CDN for modern premium icons) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- AMBIENT FLOATING LIGHT ORBS -->
+  <div class="ambient-bg">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header id="main-header">
+    <div class="container nav-wrapper">
+      <a href="#home" class="logo" id="header-logo-link">
+        <img src="./logo.png" alt="TRIOOH Company Logo" id="brand-logo-img">
+        <span class="logo-text">TRIOOH</span>
+      </a>
+      
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Capabilities</a></li>
+          <li><a href="#planner">Media Planner</a></li>
+          <li><a href="#coverage">Network Map</a></li>
+          <li><a href="#gallery">Media Showcase</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="nav-cta"><a href="#planner" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Build Plan</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-toggle" id="menu-toggle-btn" aria-label="Toggle Navigation Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span></span> Next-Gen Outdoor Media
+        </div>
+        <h1 class="hero-title">
+          <span class="gradient-text">Out-of-Home Media,</span><br>
+          <span class="brand-gradient">Powered by Data.</span>
+        </h1>
+        <p class="hero-description">
+          We help premium brands make intelligent, high-impact advertising decisions. Experience transparent, measurable, and highly immersive campaigns on India's top OOH and <span class="typing-container" id="typing-text">Digital Screens</span>.
+        </p>
+        <div class="hero-actions">
+          <a href="#planner" class="btn btn-primary">
+            Launch Planner <i data-lucide="compass"></i>
+          </a>
+          <a href="#coverage" class="btn btn-secondary">
+            Explore Coverage <i data-lucide="map-pin"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <!-- Floating HUD Elements -->
+        <div class="floating-hud hud-1 glass-panel">
+          <p class="hud-title">Est. Daily Reach</p>
+          <div class="hud-value">14.8M+ <span><i data-lucide="trending-up" style="display:inline; width:16px;"></i> +18%</span></div>
+        </div>
+        
+        <div class="floating-hud hud-2 glass-panel">
+          <p class="hud-title">Active Screen Network</p>
+          <div class="hud-value">2,500+ <span style="color:#06b6d4;">DOOH</span></div>
+        </div>
+
+        <!-- Premium Showcase Screen Mockup -->
+        <div class="mock-billboard glass-panel">
+          <img src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80" alt="Premium Roadside Digital Billboard mock" id="hero-showcase-img">
+          <div class="mock-billboard-screen">
+            <span class="screen-badge">Premium Highway Hub</span>
+            <h3 class="screen-title">Cyber City Smart Display</h3>
+            <div class="screen-meta">
+              <span><i data-lucide="eye" style="width: 14px;"></i> 1.2M Weekly Impressions</span>
+              <span><i data-lucide="map-pin" style="width: 14px;"></i> Gurugram Delhi NCR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK NUMERIC STATS -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat-card glass-panel">
+        <div class="stat-number brand-gradient" id="stat-screens">2,500+</div>
+        <div class="stat-label">Smart DOOH Screens</div>
+      </div>
+      <div class="stat-card glass-panel">
+        <div class="stat-number brand-gradient" id="stat-cities">15+</div>
+        <div class="stat-label">Indian Cities</div>
+      </div>
+      <div class="stat-card glass-panel">
+        <div class="stat-number brand-gradient" id="stat-impressions">45M+</div>
+        <div class="stat-label">Daily Impressions</div>
+      </div>
+      <div class="stat-card glass-panel">
+        <div class="stat-number brand-gradient" id="stat-satisfaction">98%</div>
+        <div class="stat-label">Brand Recall Rate</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES / CORE CAPABILITIES -->
+  <section class="features" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="gradient-text">Our Core Capabilities</span></h2>
+        <p class="section-subtitle">Blending cutting-edge audience analytics with premium real-world inventory to deliver unmatched campaign performance.</p>
+      </div>
+      
+      <div class="features-grid">
+        <!-- Capability 1 -->
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="bar-chart-3"></i>
+          </div>
+          <h3 class="feature-title">Data-Backed Planning</h3>
+          <p class="feature-text">We map consumer mobility paths, footfalls, and demographics patterns. Your budget is directed strictly to high-value assets matching your target demographic.</p>
+        </div>
+        
+        <!-- Capability 2 -->
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="monitor"></i>
+          </div>
+          <h3 class="feature-title">Smart DOOH Network</h3>
+          <p class="feature-text">Unify airport digital displays, high-street smart billboards, tech park networks, and luxury mall screens under a single intelligent execution framework.</p>
+        </div>
+        
+        <!-- Capability 3 -->
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="target"></i>
+          </div>
+          <h3 class="feature-title">Performance Attribution</h3>
+          <p class="feature-text">Measure success transparently. Get detailed post-campaign attribution reports mapping actual reach, impressions, frequency, and estimated lift metrics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DYNAMIC CAMPAIGN & MEDIA PLANNER -->
+  <section class="planner" id="planner">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="gradient-text">Interactive Campaign Planner</span></h2>
+        <p class="section-subtitle">Simulate your TRIOOH campaign. Select variables to generate custom media allocations and reach forecasts instantly.</p>
+      </div>
+
+      <div class="planner-layout">
+        <!-- Planner Left Inputs -->
+        <div class="planner-controls glass-panel">
+          
+          <!-- Slider 1: Budget -->
+          <div class="control-group">
+            <div class="control-header">
+              <label for="budget-slider" class="control-label">Campaign Budget</label>
+              <span class="control-value" id="budget-display">₹15,00,000</span>
+            </div>
+            <input type="range" min="500000" max="15000000" step="500000" value="1500000" class="slider" id="budget-slider">
+          </div>
+
+          <!-- Input 2: Indian Cities Checklist -->
+          <div class="control-group">
+            <label class="control-label">Target Cities (Multi-select)</label>
+            <div class="city-grid" id="planner-city-selectors">
+              <div class="city-btn active" data-city="mumbai">Mumbai</div>
+              <div class="city-btn active" data-city="delhi">Delhi NCR</div>
+              <div class="city-btn" data-city="bangalore">Bangalore</div>
+              <div class="city-btn" data-city="pune">Pune</div>
+              <div class="city-btn" data-city="hyderabad">Hyderabad</div>
+            </div>
+          </div>
+
+          <!-- Input 3: Target Persona -->
+          <div class="control-group">
+            <label class="control-label">Target Audience Persona</label>
+            <div class="persona-grid" id="planner-persona-selectors">
+              <div class="persona-card active" data-persona="professionals">
+                <span class="persona-title">Corporate & IT</span>
+                <span class="persona-desc">High disposable income tech-park audiences.</span>
+              </div>
+              <div class="persona-card" data-persona="shoppers">
+                <span class="persona-title">Premium Shoppers</span>
+                <span class="persona-desc">Frequent mall, high-street & premium hub visitors.</span>
+              </div>
+              <div class="persona-card" data-persona="travelers">
+                <span class="persona-title">Air Travelers</span>
+                <span class="persona-desc">High-value decision makers at transit terminals.</span>
+              </div>
+              <div class="persona-card" data-persona="commuters">
+                <span class="persona-title">Daily Commuters</span>
+                <span class="persona-desc">Mass reach on arterial highway billboards.</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Planner Right Live Dashboard -->
+        <div class="planner-results glass-panel">
+          <div class="results-header">
+            <h3 class="results-title">Allocation Dashboard</h3>
+            <p class="results-subtitle">Recommended deployment based on selected parameters</p>
+          </div>
+          
+          <!-- Numeric KPIs -->
+          <div class="results-metrics">
+            <div class="metrics-list">
+              <div class="metric-item">
+                <span class="metric-label">Est. Total Impressions</span>
+                <span class="metric-val" id="res-impressions">4.8M</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">Target Audience Reach</span>
+                <span class="metric-val" id="res-reach">720K</span>
+              </div>
+            </div>
+            
+            <!-- SVG Doughnut Chart Representation -->
+            <div class="chart-container">
+              <svg width="150" height="150" class="chart-svg">
+                <circle cx="75" cy="75" r="55" class="chart-bg-circle"></circle>
+                <circle cx="75" cy="75" r="55" class="chart-bar-circle" id="chart-progress" stroke-dasharray="345" stroke-dashoffset="100"></circle>
+              </svg>
+              <div class="chart-center-text">
+                <span class="chart-percentage" id="res-lift">82%</span>
+                <span class="chart-label">Brand Lift</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recommended Allocations Progress Bars -->
+          <div class="allocation-breakdown">
+            <h4 class="allocation-title">Recommended Media Mix</h4>
+            
+            <!-- Alloc 1 -->
+            <div class="alloc-bar-wrapper">
+              <div class="alloc-meta">
+                <span class="alloc-name"><span class="alloc-dot dot-dooh"></span> Digital OOH (DOOH)</span>
+                <span class="alloc-pct" id="alloc-pct-dooh">60%</span>
+              </div>
+              <div class="alloc-progress">
+                <div class="alloc-fill alloc-fill-dooh" id="alloc-bar-dooh" style="width: 60%;"></div>
+              </div>
+            </div>
+
+            <!-- Alloc 2 -->
+            <div class="alloc-bar-wrapper">
+              <div class="alloc-meta">
+                <span class="alloc-name"><span class="alloc-dot dot-airport"></span> Airport Displays</span>
+                <span class="alloc-pct" id="alloc-pct-airport">25%</span>
+              </div>
+              <div class="alloc-progress">
+                <div class="alloc-fill alloc-fill-airport" id="alloc-bar-airport" style="width: 25%;"></div>
+              </div>
+            </div>
+
+            <!-- Alloc 3 -->
+            <div class="alloc-bar-wrapper">
+              <div class="alloc-meta">
+                <span class="alloc-name"><span class="alloc-dot dot-transit"></span> Transit & Highways</span>
+                <span class="alloc-pct" id="alloc-pct-transit">15%</span>
+              </div>
+              <div class="alloc-progress">
+                <div class="alloc-fill alloc-fill-transit" id="alloc-bar-transit" style="width: 15%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn-primary" id="planner-submit-cta" style="width: 100%;">
+            Secure This Custom Plan <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE NETWORK & SVG MAP -->
+  <section class="coverage" id="coverage">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="gradient-text">Our OOH Network Coverage</span></h2>
+        <p class="section-subtitle">We have strategically established high-impact networks across key Indian metropolitan growth nodes.</p>
+      </div>
+
+      <div class="coverage-layout">
+        <!-- SVG Map Plot -->
+        <div class="coverage-map-wrapper glass-panel">
+          <div class="map-svg-container" id="india-map-container">
+            <!-- Simulated India map backdrop with elegant clean SVG lines -->
+            <svg viewBox="0 0 400 500" style="width:100%; height:100%; filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.1));">
+              <!-- Indian subcontinent contour trace mock -->
+              <path d="M150,50 L200,80 L230,60 L240,80 L260,110 L280,115 L290,130 L320,130 L310,160 L330,190 L340,210 L300,240 L280,260 L260,270 L250,290 L240,320 L230,340 L220,380 L205,420 L200,450 L195,420 L190,380 L180,350 L160,330 L150,300 L120,290 L105,270 L110,240 L90,220 L110,180 L130,150 L125,110 L135,90 Z" 
+                    fill="rgba(15, 23, 42, 0.8)" stroke="rgba(255,255,255,0.06)" stroke-width="2.5" />
+              <!-- Subtle internal borders -->
+              <path d="M150,110 L180,130 L220,130 M200,200 L240,230 L260,230 M150,250 L180,280" 
+                    fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.5" />
+            </svg>
+
+            <!-- Map pins placed absolute in percentage via CSS -->
+            <div class="map-pin pin-delhi active" data-target-city="delhi">
+              <div class="pin-pulse"></div>
+              <div class="pin-core"></div>
+            </div>
+            
+            <div class="map-pin pin-mumbai" data-target-city="mumbai">
+              <div class="pin-pulse"></div>
+              <div class="pin-core"></div>
+            </div>
+
+            <div class="map-pin pin-bangalore" data-target-city="bangalore">
+              <div class="pin-pulse"></div>
+              <div class="pin-core"></div>
+            </div>
+
+            <div class="map-pin pin-pune" data-target-city="pune">
+              <div class="pin-pulse"></div>
+              <div class="pin-core"></div>
+            </div>
+
+            <div class="map-pin pin-hyderabad" data-target-city="hyderabad">
+              <div class="pin-pulse"></div>
+              <div class="pin-core"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tooltip City Details card -->
+        <div class="map-detail-card glass-panel" id="map-city-detail-panel">
+          <!-- Placeholder state -->
+          <div class="detail-placeholder" id="map-placeholder-widget">
+            <i data-lucide="map-pin"></i>
+            <h3>Select a Hub on the Map</h3>
+            <p>Click on any of the glowing coordinates to review TRIOOH's exact local asset volumes, audience scale, and high-footfall locations.</p>
+          </div>
+
+          <!-- Dynamic city contents (driven by app.js) -->
+          <div class="detail-content" id="map-city-data-widget">
+            <div class="detail-header">
+              <div>
+                <h3 class="detail-city" id="detail-city-name">Delhi NCR</h3>
+                <span class="detail-region" id="detail-city-region">Capital Territory</span>
+              </div>
+              <i data-lucide="shield-check" style="color: var(--accent-secondary); width:32px; height:32px;"></i>
+            </div>
+            
+            <div class="detail-grid">
+              <div>
+                <p class="detail-label">DOOH Screens</p>
+                <p class="detail-value" id="detail-city-screens">850+</p>
+              </div>
+              <div>
+                <p class="detail-label">Weekly Reach</p>
+                <p class="detail-value" id="detail-city-reach">4.2M</p>
+              </div>
+              <div>
+                <p class="detail-label">Avg. Dwell Time</p>
+                <p class="detail-value" id="detail-city-dwell">4.5 Min</p>
+              </div>
+              <div>
+                <p class="detail-label">Attribution Lift</p>
+                <p class="detail-value" id="detail-city-lift">+14%</p>
+              </div>
+            </div>
+            
+            <p class="detail-label" style="margin-bottom: 0.75rem;">Premium Placement Hubs</p>
+            <div class="detail-locations-list" id="detail-city-locations">
+              <span class="location-tag">Cyber City</span>
+              <span class="location-tag">IGI Airport T3</span>
+              <span class="location-tag">Connaught Place</span>
+              <span class="location-tag">NH-8 Digital Bulletins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO / MEDIA PLACEMENT GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="gradient-text">Premium Media Placements</span></h2>
+        <p class="section-subtitle">Exemplary high-definition digital outdoor assets active in the most crowded economic districts in the country.</p>
+      </div>
+
+      <div class="gallery-slider-wrapper">
+        <div class="gallery-track" id="gallery-slider-track">
+          <!-- Item 1 -->
+          <div class="gallery-item glass-panel">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=700&q=80" alt="Tech Park digital kiosk showcase" class="gallery-img">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Tech Park Network</span>
+              <h3 class="gallery-title">Premium Campus Totems</h3>
+              <p class="gallery-desc">Double-sided high-brightness kiosks tracking premium corporate decision makers, executives, and tech developers in top IT corridors.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="gallery-item glass-panel">
+            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=700&q=80" alt="Airport terminal digital lounge mockup" class="gallery-img">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Airport displays</span>
+              <h3 class="gallery-title">Terminal Lounge Panels</h3>
+              <p class="gallery-desc">Large-format static & video digital panels positioned adjacent to main baggage conveyor systems and luxury boarding terminals.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="gallery-item glass-panel">
+            <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=700&q=80" alt="Luxury retail shopping display mockup" class="gallery-img">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Premium Malls</span>
+              <h3 class="gallery-title">Luxury Atrium Screens</h3>
+              <p class="gallery-desc">Suspended multi-screen digital installations capturing shoppers' attention across major central walkways and lifestyle stores.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 (Additional slide for interaction) -->
+          <div class="gallery-item glass-panel">
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&w=700&q=80" alt="Highway digital portal display mockup" class="gallery-img">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">Highways</span>
+              <h3 class="gallery-title">Smart Gantries & Bulletins</h3>
+              <p class="gallery-desc">Massive LED billboards strategically erected along major high-velocity toll roads capturing arterial vehicle traffic daily.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left / Right Carousel Controls -->
+      <div class="gallery-controls">
+        <button class="gallery-arrow" id="gallery-prev-btn" aria-label="Previous Slide">
+          <i data-lucide="chevron-left"></i>
+        </button>
+        <button class="gallery-arrow" id="gallery-next-btn" aria-label="Next Slide">
+          <i data-lucide="chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIEF BUILDER & PROPOSAL FORM -->
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <!-- Left Side details -->
+      <div class="contact-info">
+        <div class="hero-badge contact-badge">
+          <span></span> Connect with Us
+        </div>
+        <h2 class="contact-title"><span class="gradient-text">Ready to Launch Your Campaign?</span></h2>
+        <p class="contact-desc">
+          Get a comprehensive, data-backed media plan customized for your brand. Submit your brief, and our media experts will draft a detailed placement recommendation within 24 hours.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i data-lucide="mail"></i>
+            </div>
+            <div class="contact-item-text">
+              <h4>Email Us</h4>
+              <p>campaigns@triooh.com</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i data-lucide="map-pin"></i>
+            </div>
+            <div class="contact-item-text">
+              <h4>Headquarters</h4>
+              <p>Mumbai, Maharashtra, India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side Glassmorphic Contact Form -->
+      <form class="contact-form glass-panel" id="brief-builder-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact-name" class="form-label">Full Name</label>
+            <input type="text" id="contact-name" class="form-input" placeholder="e.g. Abhinav Varshney" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email" class="form-label">Work Email</label>
+            <input type="email" id="contact-email" class="form-input" placeholder="e.g. company@brand.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact-brand" class="form-label">Brand / Company</label>
+            <input type="text" id="contact-brand" class="form-input" placeholder="e.g. TRIOOH Tech" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-budget" class="form-label">Selected Budget Target</label>
+            <input type="text" id="contact-budget" class="form-input" placeholder="₹15,00,000" readonly>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-brief" class="form-label">Campaign Brief & Target Audiences</label>
+          <textarea id="contact-brief" class="form-input" placeholder="Describe your product, campaign goals, key demographics, and any preferences..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit-btn" id="contact-submit-btn">
+          Request Complete Proposal <i data-lucide="send"></i>
+        </button>
+
+        <div class="form-success-msg" id="form-success-alert">
+          <i data-lucide="check-circle" style="display:inline-block; vertical-align:middle; margin-right:8px; width:20px;"></i>
+          Brief submitted successfully! Our expert planners will connect with you soon.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo">
+          <img src="./logo.png" alt="TRIOOH Company Logo">
+          <span class="logo-text">TRIOOH</span>
+        </a>
+        <p class="footer-desc">
+          TRIOOH Communications Private Limited is India's leading technology-driven, data-backed Out-of-Home advertising solutions provider.
+        </p>
+      </div>
+
+      <!-- Links column -->
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Our Capabilities</a></li>
+          <li><a href="#planner">Campaign Planner</a></li>
+          <li><a href="#coverage">Coverage network</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter column -->
+      <div class="footer-newsletter">
+        <h4 class="footer-col-title">Join OOH Insights</h4>
+        <p class="newsletter-text">Subscribe to our monthly mobility and digital outdoor traffic insight reports across India.</p>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+          <input type="email" class="newsletter-input" placeholder="Your work email" required aria-label="Newsletter email input">
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom credits -->
+    <div class="container footer-bottom">
+      <p>&copy; 2026 TRIOOH Communications Private Limited. All Rights Reserved.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="LinkedIn Profile"><i data-lucide="linkedin"></i></a>
+        <a href="#" aria-label="Twitter Profile"><i data-lucide="twitter"></i></a>
+        <a href="#" aria-label="Instagram Profile"><i data-lucide="instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lucide Icon Initialization & Dynamic JavaScript Logic -->
+  <script src="./app.js"></script>
+</body>
+</html>

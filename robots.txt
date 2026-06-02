@@ -1,0 +1,12 @@
+# www.robotstxt.org/
+# Production robots.txt for TRIOOH Communications
+
+User-agent: *
+Allow: /
+
+# Exclude sensitive developer / local directories (if any)
+Disallow: /drafts/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.triooh.com/sitemap.xml
