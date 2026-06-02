@@ -1,0 +1,22 @@
+{
+  "name": "triooh-platform",
+  "version": "1.0.0",
+  "description": "Node.js Express server for TRIOOH data-backed OOH advertising platform",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "ooh",
+    "dooh",
+    "advertising",
+    "express",
+    "nodejs"
+  ],
+  "author": "TRIOOH",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

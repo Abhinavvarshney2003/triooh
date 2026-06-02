@@ -1,23 +1,24 @@
-# TRIOOH — Technology-Driven OOH & DOOH Advertising Platform
+# TRIOOH — Technology-Driven OOH & DOOH Backend Web Platform
 
 [![Status: Production Ready](https://img.shields.io/badge/Status-Production%20Ready-success?style=flat-square)](#)
-[![Stack: Vanilla HTML5 / CSS3 / JS](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS-blue?style=flat-square)](#)
-[![Performance: 100/100](https://img.shields.io/badge/Lighthouse-100%2F100-brightgreen?style=flat-square)](#)
+[![Stack: Node.js / Express.js](https://img.shields.io/badge/Stack-Node.js%20%7C%20Express.js-green?style=flat-square)](#)
+[![Database: campaigns.json](https://img.shields.io/badge/Database-JSON%20File-orange?style=flat-square)](#)
 
-TRIOOH is a state-of-the-art single-page web application designed for **TRIOOH Communications Private Limited**—India's leading technology-driven, data-backed Out-of-Home (OOH) advertising agency. 
+TRIOOH is a state-of-the-art server-side web application powered by **Node.js** and **Express.js**, custom-built for **TRIOOH Communications Private Limited**—India's leading technology-driven, data-backed Out-of-Home (OOH) advertising agency. 
 
-This platform allows premium brand advertisers to simulate, plan, and optimize high-impact OOH campaigns across major Indian metropolitan nodes, leveraging advanced client-side calculations and dynamic metrics dashboard widgets.
+This platform allows premium brand advertisers to simulate, plan, and optimize high-impact OOH campaigns across major Indian metropolitan nodes, leveraging dynamic backend calculators and persistent campaign brief submissions.
 
 ---
 
-## 🌟 Interactive Experience & Features
+## 🌟 Interactive Experience & Backend Features
 
+*   **Node.js / Express Server**: Unified CommonJS backend server supporting static resource pipelines, JSON payload parser middleware, and REST API routing.
+*   **Active Campaigns API Endpoint (`POST /api/proposal`)**: Standardized endpoint receiving advertiser details, validating them server-side, and saving records synchronously.
+*   **Lightweight Persistence (`campaigns.json`)**: Persistent JSON database storing campaign proposals with unique IDs and automated ISO entry timestamps.
 *   **Cyber-Tech Aesthetic**: Premium dark slate user interface featuring ambient animated backdrop gradient meshes, smooth transition filters, and custom glassmorphism layers.
 *   **Interactive Campaign & Media Planner**: A client-side planning widget allowing advertisers to manipulate budgets, select target metropolitan cities, toggle audience demographics, and instantly view optimized media mixes, impression counts, reach metrics, and computed brand-recall lift.
 *   **Dynamic SVG Coverage Map**: Fully interactive glowing Indian metropolitan hubs (Delhi, Mumbai, Bangalore, Pune, Hyderabad) that display real-time dwell times, screen counts, and local premium placement tags on click or hover.
 *   **Placement Showcase**: Fully responsive custom sliding gallery demonstrating digital Highway Gantries, smart Tech Park Totems, premium Mall screens, and luxury Airport Lounges.
-*   **Proposal brief Builder**: High-fidelity contact form that locks and auto-imports simulated budget plans from the planner directly into the campaign submission brief.
-*   **Favicon Optimization**: Custom-cropped, square-padded favicons (`favicon.png` & `favicon.ico`) centered mathematically to prevent any browser tab distortion or squishing.
 
 ---
 
@@ -25,9 +26,12 @@ This platform allows premium brand advertisers to simulate, plan, and optimize h
 
 ```tree
 /triooh
+├── server.js        # Node.js Express server, JSON routing & database engine
+├── package.json     # Node project manifest, dependencies, and launch scripts
 ├── index.html       # Primary entrypoint & semantic HTML5 template
 ├── styles.css       # consolidated CSS design system, grid, custom properties & keyframe animations
-├── app.js           # Platform interactive controllers, planning calculations & transitions
+├── app.js           # Platform interactive controllers, planning calculations & fetch API transitions
+├── campaigns.json   # Persistent JSON file storing submitted brief proposals
 ├── logo.png         # Main horizontal company brand asset (1920x1080)
 ├── favicon.png      # Perfect 1:1 ratio transparent square logo for high-res browser tabs
 ├── favicon.ico      # Fallback ICO bundle (16px to 128px) for native browser compatibility
@@ -39,18 +43,19 @@ This platform allows premium brand advertisers to simulate, plan, and optimize h
 
 ## 🚀 Quick Start & Local Development
 
-No complex build steps, compilers, or heavy node modules are required! The platform has **zero external dependencies** for ultra-fast loading times.
+### 1. Install Dependencies
+Open your terminal inside the `/triooh` project directory and install the necessary package dependencies:
+```bash
+npm install
+```
 
-### Method 1: Local HTTP Dev Server (Recommended)
-To run a clean local server with proper CORS handling for assets:
+### 2. Start the Node.js Server
+Spin up the local backend server:
 ```bash
-npx -y serve ./
+npm start
 ```
-*Alternatively, you can use Python's built-in server:*
-```bash
-python3 -m http.server 8000
-```
-Open `http://localhost:3000` (or `http://localhost:8000` for Python) in your browser.
+*   The console will output: `🚀 TRIOOH Express Backend launched successfully!`
+*   Open your browser to: **[http://localhost:3000](http://localhost:3000)** to explore!
 
 ---
 

@@ -451,18 +451,50 @@ const submitBtn = document.getElementById('contact-submit-btn');
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
   
-  // Submit simulation
   submitBtn.disabled = true;
-  submitBtn.innerHTML = 'Analyzing Brief & Generating Report...';
+  submitBtn.innerHTML = 'Submitting Proposal to Server...';
   
-  setTimeout(() => {
-    submitBtn.style.display = 'none';
-    successAlert.style.display = 'block';
-    
-    // Clear inputs except readonly budget
-    document.getElementById('contact-name').value = '';
-    document.getElementById('contact-email').value = '';
-    document.getElementById('contact-brand').value = '';
-    document.getElementById('contact-brief').value = '';
-  }, 2000);
+  const payload = {
+    name: document.getElementById('contact-name').value,
+    email: document.getElementById('contact-email').value,
+    brand: document.getElementById('contact-brand').value,
+    budget: document.getElementById('contact-budget').value,
+    brief: document.getElementById('contact-brief').value
+  };
+
+  fetch('/api/proposal', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+  .then(response => {
+    if (!response.ok) {
+      return response.json().then(err => { throw new Error(err.message || 'Server error occurred'); });
+    }
+    return response.json();
+  })
+  .then(result => {
+    if (result.success) {
+      submitBtn.style.display = 'none';
+      successAlert.style.display = 'block';
+      successAlert.innerHTML = `<i data-lucide="check-circle" style="display:inline-block; vertical-align:middle; margin-right:8px; width:20px;"></i> ${result.message}`;
+      lucide.createIcons();
+      
+      // Clear inputs
+      document.getElementById('contact-name').value = '';
+      document.getElementById('contact-email').value = '';
+      document.getElementById('contact-brand').value = '';
+      document.getElementById('contact-brief').value = '';
+    } else {
+      throw new Error(result.message || 'Failed to submit proposal brief.');
+    }
+  })
+  .catch(error => {
+    console.error('Error submitting brief:', error);
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = 'Request Complete Proposal <i data-lucide="send"></i>';
+    alert('Failed to submit campaign brief: ' + error.message);
+  });
 });
