@@ -1680,3 +1680,90 @@ footer {
     text-align: center;
   }
 }
+
+/* --- PATRONS & BRAND MARQUEE --- */
+.patrons {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  background: rgba(13, 17, 28, 0.2);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.patrons-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 1.5rem 0;
+}
+
+/* Linear Gradient Fade on edges of Marquee for premium polish */
+.patrons-wrapper::before, .patrons-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.patrons-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-primary) 0%, transparent 100%);
+}
+
+.patrons-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-primary) 0%, transparent 100%);
+}
+
+.patrons-track {
+  display: flex;
+  width: max-content;
+  gap: 2rem;
+  animation: marqueeScroll 40s linear infinite;
+}
+
+.patrons-track:hover {
+  animation-play-state: paused;
+}
+
+.patron-card {
+  padding: 1.5rem 2.5rem;
+  min-width: 220px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.patron-brand {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.01em;
+}
+
+.patron-billing {
+  font-size: 0.8rem;
+  color: var(--accent-secondary);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+

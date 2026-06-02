@@ -76,10 +76,10 @@ setTimeout(type, 500);
 // --- 4. COUNT-UP STATS ANIMATION ---
 const statsSection = document.querySelector('.stats');
 const statElements = [
-  { id: 'stat-screens', target: 2500, suffix: '+', current: 0 },
-  { id: 'stat-cities', target: 15, suffix: '+', current: 0 },
-  { id: 'stat-impressions', target: 45, suffix: 'M+', current: 0 },
-  { id: 'stat-satisfaction', target: 98, suffix: '%', current: 0 }
+  { id: 'stat-screens', target: 200000, suffix: '+', current: 0 },
+  { id: 'stat-billboards', target: 100000, suffix: '+', current: 0 },
+  { id: 'stat-cities', target: 15, suffix: '', current: 0 },
+  { id: 'stat-billing', target: 750, suffix: '+ Cr', current: 0 }
 ];
 
 let statsAnimated = false;
