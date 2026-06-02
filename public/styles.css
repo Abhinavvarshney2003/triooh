@@ -7,16 +7,16 @@
   --bg-card: rgba(15, 22, 36, 0.6);
   --bg-card-hover: rgba(22, 32, 53, 0.8);
   
-  --accent-primary: #7c3aed; /* Electric Violet */
-  --accent-secondary: #06b6d4; /* Cyber Cyan */
-  --accent-tertiary: #ec4899; /* Hot Pink */
+  --accent-primary: #00abf1; /* Triooh Cyan */
+  --accent-secondary: #f26024; /* Triooh Orange */
+  --accent-tertiary: #ffb800; /* Triooh Amber/Yellow */
   
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
   
   --border-color: rgba(255, 255, 255, 0.08);
-  --border-glow: rgba(124, 58, 237, 0.3);
+  --border-glow: rgba(0, 171, 241, 0.3);
   
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -25,7 +25,7 @@
   --transition-medium: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   
-  --shadow-glow: 0 0 30px rgba(124, 58, 237, 0.15);
+  --shadow-glow: 0 0 30px rgba(0, 171, 241, 0.15);
 }
 
 /* --- RESET & BASIC STYLES --- */
@@ -111,8 +111,8 @@ body {
   pointer-events: none;
   background: radial-gradient(
     600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(124, 58, 237, 0.06) 0%,
-    rgba(6, 182, 212, 0.03) 60%,
+    rgba(0, 171, 241, 0.06) 0%,
+    rgba(242, 96, 36, 0.03) 60%,
     transparent 100%
   );
   transition: background 0.15s ease-out;
@@ -223,12 +223,12 @@ a {
 .btn-primary {
   background: linear-gradient(135deg, var(--accent-primary) 0%, #6d28d9 100%);
   color: white;
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 171, 241, 0.4);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.6);
+  box-shadow: 0 6px 24px rgba(0, 171, 241, 0.6);
 }
 
 .btn-secondary {
@@ -278,7 +278,7 @@ header.scrolled {
   height: 40px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.3));
+  filter: drop-shadow(0 0 8px rgba(0, 171, 241, 0.3));
 }
 
 .logo-text {
@@ -362,8 +362,8 @@ nav a:hover::after {
   gap: 0.5rem;
   padding: 0.4rem 1rem;
   border-radius: 99px;
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  background: rgba(0, 171, 241, 0.1);
+  border: 1px solid rgba(0, 171, 241, 0.2);
   color: #c084fc;
   font-size: 0.85rem;
   font-weight: 600;
@@ -506,7 +506,7 @@ nav a:hover::after {
   top: 10%;
   left: -5%;
   background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(6, 182, 212, 0.2);
+  border: 1px solid rgba(242, 96, 36, 0.2);
   animation-delay: 1s;
 }
 
@@ -514,7 +514,7 @@ nav a:hover::after {
   bottom: 12%;
   right: -5%;
   background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  border: 1px solid rgba(0, 171, 241, 0.2);
   animation-delay: 2.5s;
 }
 
@@ -614,8 +614,8 @@ nav a:hover::after {
   width: 60px;
   height: 60px;
   border-radius: 16px;
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  background: rgba(0, 171, 241, 0.1);
+  border: 1px solid rgba(0, 171, 241, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -629,7 +629,7 @@ nav a:hover::after {
   background: var(--accent-primary);
   color: white;
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 0 15px rgba(0, 171, 241, 0.5);
 }
 
 .feature-title {
@@ -747,11 +747,11 @@ input[type=range].slider::-webkit-slider-thumb:hover {
 }
 
 .city-btn.active {
-  background: rgba(6, 182, 212, 0.1);
+  background: rgba(242, 96, 36, 0.1);
   border-color: var(--accent-secondary);
   color: var(--accent-secondary);
   font-weight: 600;
-  box-shadow: 0 0 10px rgba(6, 182, 212, 0.15);
+  box-shadow: 0 0 10px rgba(242, 96, 36, 0.15);
 }
 
 /* Persona Select Cards */
@@ -774,9 +774,9 @@ input[type=range].slider::-webkit-slider-thumb:hover {
 }
 
 .persona-card.active {
-  background: rgba(124, 58, 237, 0.08);
+  background: rgba(0, 171, 241, 0.08);
   border-color: var(--accent-primary);
-  box-shadow: 0 0 15px rgba(124, 58, 237, 0.15);
+  box-shadow: 0 0 15px rgba(0, 171, 241, 0.15);
 }
 
 .persona-title {
@@ -1245,7 +1245,7 @@ input[type=range].slider::-webkit-slider-thumb:hover {
   background: var(--accent-primary);
   border-color: var(--accent-primary);
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 0 15px rgba(0, 171, 241, 0.4);
 }
 
 /* --- CONTACT / PROPOSAL SECTION --- */
@@ -1297,8 +1297,8 @@ input[type=range].slider::-webkit-slider-thumb:hover {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  background: rgba(0, 171, 241, 0.1);
+  border: 1px solid rgba(0, 171, 241, 0.2);
   color: var(--accent-primary);
   display: flex;
   align-items: center;
@@ -1358,7 +1358,7 @@ input[type=range].slider::-webkit-slider-thumb:hover {
 .form-input:focus {
   border-color: var(--accent-secondary);
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+  box-shadow: 0 0 15px rgba(242, 96, 36, 0.15);
 }
 
 textarea.form-input {
@@ -1532,9 +1532,9 @@ footer {
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.5); }
-  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(6, 182, 212, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(242, 96, 36, 0.5); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(242, 96, 36, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(242, 96, 36, 0); }
 }
 
 @keyframes mapPulse {
