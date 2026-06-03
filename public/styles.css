@@ -626,7 +626,7 @@ nav a:hover::after {
 .screen-meta {
   display: flex;
   gap: 1.5rem;
-  color: var(--text-muted);
+  color: #94a3b8; /* Keep text color light for readability on dark billboard overlay */
   font-size: 0.85rem;
 }
 
@@ -647,21 +647,25 @@ nav a:hover::after {
   border-radius: 16px;
   z-index: 10;
   animation: floatWidget 5s ease-in-out infinite alternate;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  transition: background var(--transition-medium), border-color var(--transition-medium);
 }
 
 .hud-1 {
   top: 10%;
   left: -5%;
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(242, 96, 36, 0.2);
+  background: var(--bg-card);
+  border: 1px solid rgba(242, 96, 36, 0.25);
   animation-delay: 1s;
 }
 
 .hud-2 {
   bottom: 12%;
   right: -5%;
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(0, 171, 241, 0.2);
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 171, 241, 0.25);
   animation-delay: 2.5s;
 }
 
