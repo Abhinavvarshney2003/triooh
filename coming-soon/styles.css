@@ -327,13 +327,61 @@ body {
 /* --- SIGNUP FORM --- */
 .signup-container {
   width: 100%;
-  max-width: 550px;
+  max-width: 620px; /* Slightly wider for the contact form layout */
 }
 
 .signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  text-align: left;
+}
+
+.form-row {
   display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.form-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  background: rgba(13, 17, 28, 0.6);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: all var(--transition-medium);
+}
+
+.form-textarea:focus {
+  background: rgba(13, 17, 28, 0.9);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 15px rgba(0, 171, 241, 0.15);
+}
+
+.full-width {
   width: 100%;
 }
 
@@ -347,6 +395,7 @@ body {
   left: 1.2rem;
   top: 50%;
   transform: translateY(-50%);
+  margin-top: -1.5px; /* Visual centering adjustment for Lucide icon offset */
   display: block; /* Eliminate vertical baseline gap in container */
   color: var(--text-dim);
   width: 18px;
@@ -545,9 +594,9 @@ body {
     padding-bottom: 0.8rem;
   }
   
-  .signup-form {
+  .form-row {
     grid-template-columns: 1fr;
-    gap: 0.8rem;
+    gap: 1.25rem;
   }
   
   .teaser-stats {
@@ -644,6 +693,12 @@ body {
 
   .teaser-lbl {
     font-size: 0.7rem;
+  }
+
+  .form-textarea {
+    padding: 0.9rem;
+    font-size: 0.9rem;
+    min-height: 95px;
   }
 }
 

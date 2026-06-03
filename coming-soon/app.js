@@ -72,8 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
     notifyForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
+      const nameInput = document.getElementById('subscriber-name');
       const emailInput = document.getElementById('subscriber-email');
+      const brandInput = document.getElementById('subscriber-brand');
+      const messageInput = document.getElementById('subscriber-message');
+
+      const name = nameInput.value.trim();
       const email = emailInput.value.trim();
+      const brand = brandInput.value.trim();
+      const message = messageInput.value.trim();
       
       // Standard email regex validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -83,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Real API submit call to Formbold
+      // Real API submit call to Web3Forms
       const submitBtn = notifyForm.querySelector('button[type="submit"]');
       const originalBtnHtml = submitBtn.innerHTML;
       
@@ -101,14 +108,20 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         body: JSON.stringify({
           access_key: 'f11d0e88-94f0-48a2-881c-ceb1635776da',
-          email: email
+          name: name,
+          email: email,
+          brand: brand,
+          message: message
         })
       })
       .then(response => {
         if (response.ok) {
           formMsg.className = 'form-message success';
-          formMsg.innerHTML = '<i data-lucide="check-circle" style="width:16px; display:inline; vertical-align:middle; margin-right:4px;"></i> Subscribed! We will keep you updated.';
+          formMsg.innerHTML = '<i data-lucide="check-circle" style="width:16px; display:inline; vertical-align:middle; margin-right:4px;"></i> Message sent! We will connect with you soon.';
+          nameInput.value = '';
           emailInput.value = '';
+          brandInput.value = '';
+          messageInput.value = '';
         } else {
           throw new Error('Web3Forms submission failed');
         }
@@ -128,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Save locally to simulate subscription backup
         let subscribers = JSON.parse(localStorage.getItem('cs_subscribers') || '[]');
-        subscribers.push({ email, timestamp: new Date().toISOString() });
+        subscribers.push({ name, email, brand, message, timestamp: new Date().toISOString() });
         localStorage.setItem('cs_subscribers', JSON.stringify(subscribers));
 
         // Auto clear message after 5 seconds
