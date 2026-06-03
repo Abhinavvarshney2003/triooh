@@ -93,13 +93,16 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
       }
 
-      fetch('https://formbold.com/s/bf772aff-1926-4266-984e-4a367d29088f', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify({ email: email })
+        body: JSON.stringify({
+          access_key: 'f11d0e88-94f0-48a2-881c-ceb1635776da',
+          email: email
+        })
       })
       .then(response => {
         if (response.ok) {
@@ -107,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
           formMsg.innerHTML = '<i data-lucide="check-circle" style="width:16px; display:inline; vertical-align:middle; margin-right:4px;"></i> Subscribed! We will keep you updated.';
           emailInput.value = '';
         } else {
-          throw new Error('Formbold submission failed');
+          throw new Error('Web3Forms submission failed');
         }
       })
       .catch(error => {
