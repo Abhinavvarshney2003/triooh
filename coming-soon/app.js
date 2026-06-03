@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simulate API submit call with loader
+      // Real API submit call to Formbold
       const submitBtn = notifyForm.querySelector('button[type="submit"]');
       const originalBtnHtml = submitBtn.innerHTML;
       
@@ -93,12 +93,29 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
       }
 
-      setTimeout(() => {
-        // Success response
-        formMsg.className = 'form-message success';
-        formMsg.innerHTML = '<i data-lucide="check-circle" style="width:16px; display:inline; vertical-align:middle; margin-right:4px;"></i> Subscribed! We will keep you updated.';
-        emailInput.value = '';
-        
+      fetch('https://formbold.com/s/bf772aff-1926-4266-984e-4a367d29088f', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ email: email })
+      })
+      .then(response => {
+        if (response.ok) {
+          formMsg.className = 'form-message success';
+          formMsg.innerHTML = '<i data-lucide="check-circle" style="width:16px; display:inline; vertical-align:middle; margin-right:4px;"></i> Subscribed! We will keep you updated.';
+          emailInput.value = '';
+        } else {
+          throw new Error('Formbold submission failed');
+        }
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        formMsg.className = 'form-message error';
+        formMsg.innerText = 'Something went wrong. Please try again.';
+      })
+      .finally(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnHtml;
         
@@ -106,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
           lucide.createIcons();
         }
 
-        // Save locally to simulate subscription storage
+        // Save locally to simulate subscription backup
         let subscribers = JSON.parse(localStorage.getItem('cs_subscribers') || '[]');
         subscribers.push({ email, timestamp: new Date().toISOString() });
         localStorage.setItem('cs_subscribers', JSON.stringify(subscribers));
@@ -116,8 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
           formMsg.innerText = '';
           formMsg.className = 'form-message';
         }, 5000);
-
-      }, 1200);
+      });
     });
   }
 });
