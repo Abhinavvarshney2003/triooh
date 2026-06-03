@@ -722,6 +722,7 @@ nav a:hover::after {
   font-weight: 800;
   font-family: var(--font-heading);
   margin-bottom: 0.5rem;
+  white-space: nowrap; /* Prevent stats values from wrapping to two lines */
 }
 
 .stat-label {
