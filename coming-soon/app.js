@@ -75,11 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const nameInput = document.getElementById('subscriber-name');
       const emailInput = document.getElementById('subscriber-email');
       const brandInput = document.getElementById('subscriber-brand');
+      const phoneInput = document.getElementById('subscriber-phone');
       const messageInput = document.getElementById('subscriber-message');
 
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
       const brand = brandInput.value.trim();
+      const phone = phoneInput.value.trim();
       const message = messageInput.value.trim();
       
       // Standard email regex validation
@@ -111,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
           name: name,
           email: email,
           brand: brand,
+          phone: phone,
           message: message
         })
       })
@@ -121,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
           nameInput.value = '';
           emailInput.value = '';
           brandInput.value = '';
+          phoneInput.value = '';
           messageInput.value = '';
         } else {
           throw new Error('Web3Forms submission failed');
@@ -141,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Save locally to simulate subscription backup
         let subscribers = JSON.parse(localStorage.getItem('cs_subscribers') || '[]');
-        subscribers.push({ name, email, brand, message, timestamp: new Date().toISOString() });
+        subscribers.push({ name, email, brand, phone, message, timestamp: new Date().toISOString() });
         localStorage.setItem('cs_subscribers', JSON.stringify(subscribers));
 
         // Auto clear message after 5 seconds
