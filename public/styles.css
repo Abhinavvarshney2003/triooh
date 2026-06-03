@@ -1231,10 +1231,21 @@ input[type=range].slider::-webkit-slider-thumb:hover {
   border-color: var(--accent-tertiary);
 }
 
-.pin-delhi { top: 32%; left: 45%; }
-.pin-mumbai { top: 62%; left: 41.5%; }
-.pin-bangalore { top: 76%; left: 48.5%; }
-.pin-kolkata { top: 50%; left: 71%; }
+.pin-connaught { top: 41.25%; left: 48.75%; }
+.pin-igi { top: 68.75%; left: 46.25%; }
+.pin-cyber { top: 80%; left: 52.5%; }
+.pin-noida { top: 62.5%; left: 68%; }
+
+/* Connaught Place Yellow HQ Pin Highlight */
+.pin-connaught .pin-core {
+  background: var(--accent-tertiary);
+  box-shadow: 0 0 10px var(--accent-tertiary);
+}
+
+.pin-connaught .pin-pulse {
+  border-color: var(--accent-tertiary);
+}
+
 
 /* Map Tooltip Detail Card */
 .map-detail-card {

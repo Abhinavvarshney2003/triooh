@@ -299,41 +299,41 @@ const mapDetailCard = document.getElementById('map-city-data-widget');
 
 // City data specifications
 const mapData = {
-  delhi: {
-    city: 'Delhi NCR',
-    region: 'National Capital Territory',
-    screens: '850+',
-    reach: '4.2M Weekly',
-    dwell: '5.2 Mins',
+  'connaught-place': {
+    city: 'Connaught Place',
+    region: 'Central Delhi Hub',
+    screens: '120+',
+    reach: '1.5M Weekly',
+    dwell: '5.5 Mins',
     lift: '+18% Peak',
-    locations: ['Cyber City DLF', 'IGI Airport T3 Arrivals', 'Noida Express Linkways', 'Connaught Place Ringroad']
+    locations: ['Inner Circle LEDs', 'Outer Ring Road Gantries', 'Palika Bazaar Portals', 'Janpath Digital Bulletins']
   },
-  mumbai: {
-    city: 'Mumbai',
-    region: 'Financial Hub',
-    screens: '920+',
-    reach: '5.6M Weekly',
-    dwell: '6.5 Mins',
-    lift: '+21% Peak',
-    locations: ['Bandra-Worli Sea Link Gantries', 'CSIA Airport T2 departures', 'Western Express Highway LED', 'Lower Parel High-Streets']
-  },
-  bangalore: {
-    city: 'Bangalore',
-    region: 'Tech Corridor',
-    screens: '580+',
-    reach: '3.1M Weekly',
-    dwell: '4.8 Mins',
-    lift: '+16% Peak',
-    locations: ['Outer Ring Road Bulletins', 'Electronic City Flyover Portals', 'Kempegowda Airport Arrivals', 'Indiranagar Hubs']
-  },
-  kolkata: {
-    city: 'Kolkata',
-    region: 'Cultural & East India Hub',
-    screens: '450+',
+  'igi-airport': {
+    city: 'IGI Airport T3',
+    region: 'Transit Hub (Indira Gandhi Int\'l Airport)',
+    screens: '340+',
     reach: '2.8M Weekly',
-    dwell: '4.0 Mins',
+    dwell: '8.0 Mins',
+    lift: '+22% Peak',
+    locations: ['T3 Arrivals Digital Totems', 'T3 Departure Pillar LEDs', 'Baggage Claim Videowalls', 'Duty Free Walkway Displays']
+  },
+  'cyber-city': {
+    city: 'Cyber City NH-8',
+    region: 'Gurugram Corporate Corridor',
+    screens: '260+',
+    reach: '2.1M Weekly',
+    dwell: '6.2 Mins',
+    lift: '+20% Peak',
+    locations: ['Cyber Hub Cyberwalk LEDs', 'DLF Phase II & III Portals', 'NH-8 Toll Gate Gantries', 'Rapid Metro Station Displays']
+  },
+  'noida-expressway': {
+    city: 'Noida Expressway',
+    region: 'East Delhi & Noida Linkways',
+    screens: '130+',
+    reach: '1.2M Weekly',
+    dwell: '4.5 Mins',
     lift: '+15% Peak',
-    locations: ['Howrah Bridge Junctions', 'Park Street High-Streets', 'NSCBI Airport Terminals', 'Salt Lake Sector V Hubs']
+    locations: ['DND Flyway Gantries', 'Sector 18 Market LEDs', 'Film City Linkway Portals', 'Noida Greater Link LEDs']
   }
 };
 
