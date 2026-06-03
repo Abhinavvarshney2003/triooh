@@ -138,6 +138,12 @@
   stroke: rgba(15, 22, 36, 0.04);
 }
 
+[data-theme="radiance"] .location-tag {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(15, 22, 36, 0.1);
+  color: var(--text-main);
+}
+
 /* Dynamic liquid movement animation */
 @keyframes radianceFluid {
   0% { background-position: 0% 50%; }
@@ -625,9 +631,11 @@ nav a:hover::after {
 
 .screen-meta {
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: 0.4rem;
   color: #94a3b8; /* Keep text color light for readability on dark billboard overlay */
   font-size: 0.85rem;
+  align-items: flex-start;
 }
 
 .screen-meta span {
