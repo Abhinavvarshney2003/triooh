@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TRIOOH - The future of data-backed digital out-of-home (DOOH) and traditional OOH advertising is landing soon. Stay tuned.">
+  <title>TRIOOH | The Future of OOH is Coming Soon</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Ambient Fluid Mesh Backdrop -->
+  <div class="ambient-bg">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+  <div class="ambient-grid"></div>
+  <div class="interactive-glow" id="mouse-glow"></div>
+
+  <!-- Main Coming Soon Content -->
+  <main class="coming-soon-container">
+    <header class="cs-header">
+      <div class="logo">
+        <img src="logo.png" alt="TRIOOH Logo">
+        <span class="logo-text">TRIOOH</span>
+      </div>
+    </header>
+
+    <section class="cs-content glass-panel">
+      <!-- Status Badge -->
+      <div class="cs-badge">
+        <span class="badge-dot"></span>
+        <span>Reimagining OOH Advertising</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="cs-title">
+        The Future of <span class="gradient-text">Data-Backed OOH</span> is Landing
+      </h1>
+      
+      <p class="cs-description">
+        We are building India's most advanced, programmatic digital out-of-home (DOOH) network. 
+        Engineered for precision, backed by real-time analytics, and built to capture attention.
+      </p>
+
+      <!-- Countdown Widget -->
+      <div class="countdown-wrapper" id="countdown">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">00</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">00</span>
+          <span class="countdown-label">Mins</span>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="seconds">00</span>
+          <span class="countdown-label">Secs</span>
+        </div>
+      </div>
+
+      <!-- Notification Signup Form -->
+      <div class="signup-container">
+        <form id="notify-form" class="signup-form">
+          <div class="input-wrapper">
+            <i data-lucide="mail" class="input-icon"></i>
+            <input type="email" id="subscriber-email" class="form-input" placeholder="Enter your business email" required>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Notify Me <i data-lucide="bell" class="btn-icon"></i>
+          </button>
+        </form>
+        <div class="form-message" id="form-msg"></div>
+      </div>
+
+      <!-- Live Preview Mini Stats (Teaser) -->
+      <div class="teaser-stats">
+        <div class="teaser-stat">
+          <span class="teaser-val">100K+</span>
+          <span class="teaser-lbl">Premium Billboards</span>
+        </div>
+        <div class="teaser-divider"></div>
+        <div class="teaser-stat">
+          <span class="teaser-val">200K+</span>
+          <span class="teaser-lbl">Smart DOOH Screens</span>
+        </div>
+        <div class="teaser-divider"></div>
+        <div class="teaser-stat">
+          <span class="teaser-val">15+</span>
+          <span class="teaser-lbl">Major Cities</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Information -->
+    <footer class="cs-footer">
+      <p class="copyright">&copy; 2026 TRIOOH. All rights reserved.</p>
+      <div class="social-links">
+        <a href="mailto:hello@triooh.com" class="social-link" title="Contact Us">
+          <i data-lucide="mail"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+          <i data-lucide="linkedin"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Twitter/X">
+          <i data-lucide="twitter"></i>
+        </a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
