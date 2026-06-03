@@ -568,3 +568,82 @@ body {
     padding-top: 1.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .coming-soon-container {
+    padding: 1rem 0.75rem;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+
+  .cs-content {
+    padding: 2.2rem 1rem;
+    gap: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .cs-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .cs-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .countdown-wrapper {
+    gap: 0.4rem;
+  }
+
+  .countdown-item {
+    width: 58px;
+  }
+
+  .countdown-number {
+    font-size: 1.6rem;
+  }
+
+  .countdown-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    margin-top: 0.35rem;
+  }
+
+  .countdown-separator {
+    font-size: 1.3rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .form-input {
+    padding: 0.9rem 1rem 0.9rem 2.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .input-icon {
+    left: 1rem;
+    width: 16px;
+    height: 16px;
+  }
+
+  .btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .teaser-stats {
+    padding-top: 1.5rem;
+    gap: 1.2rem;
+  }
+
+  .teaser-val {
+    font-size: 1.5rem;
+  }
+
+  .teaser-lbl {
+    font-size: 0.7rem;
+  }
+}
+
