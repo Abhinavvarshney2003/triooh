@@ -1517,7 +1517,7 @@ input[type=range].slider::-webkit-slider-thumb:hover {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-color);
   border-radius: 10px;
-  padding: 0.9rem 1.2rem;
+  padding: 0.85rem 1rem;
   color: white;
   font-family: var(--font-body);
   font-size: 0.95rem;
