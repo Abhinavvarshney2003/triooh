@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
 /* --- DESIGN SYSTEM & CSS VARIABLES --- */
 :root {
@@ -19,7 +19,7 @@
   --border-glow: rgba(0, 171, 241, 0.3);
   
   --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
   
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-medium: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -91,14 +91,16 @@ body {
   height: 100%;
   z-index: -2;
   pointer-events: none;
-  opacity: 0.08;
+  opacity: 0.12;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
-  background-position: center;
-  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%);
-  -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%);
+    linear-gradient(rgba(0, 171, 241, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 171, 241, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(242, 96, 36, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 96, 36, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px, 120px 120px, 120px 120px;
+  background-position: 0 0, 0 0, 30px 30px, 30px 30px;
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 35%, rgba(0,0,0,0.1) 90%);
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 35%, rgba(0,0,0,0.1) 90%);
 }
 
 .interactive-glow {
@@ -168,7 +170,7 @@ a {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 30%, #a78bfa 70%, var(--accent-secondary) 100%);
+  background: linear-gradient(135deg, #ffffff 20%, var(--accent-primary) 65%, var(--accent-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
