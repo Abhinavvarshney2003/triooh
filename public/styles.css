@@ -28,6 +28,123 @@
   --shadow-glow: 0 0 30px rgba(0, 171, 241, 0.15);
 }
 
+/* --- BRAND RADIENCE LIGHT THEME OVERRIDES --- */
+[data-theme="radiance"] {
+  --bg-primary: #f0f7fc; /* Soft brand-tinted blue/grey background */
+  --bg-secondary: #e2eef6;
+  --bg-card: rgba(255, 255, 255, 0.72);
+  --bg-card-hover: rgba(255, 255, 255, 0.88);
+  
+  --text-main: #0b1329; /* Deep navy slate text for premium contrast */
+  --text-muted: #334155;
+  --text-dim: #5c6e84;
+  
+  --border-color: rgba(15, 22, 36, 0.08);
+  --border-glow: rgba(0, 171, 241, 0.35);
+  --shadow-glow: 0 10px 30px rgba(0, 171, 241, 0.12);
+}
+
+/* Radiance Theme Background Mesh Overlay & Blending Orbs */
+[data-theme="radiance"] .ambient-bg {
+  background: linear-gradient(135deg, 
+    rgba(0, 171, 241, 0.18) 0%, 
+    rgba(255, 255, 255, 0.85) 40%, 
+    rgba(242, 96, 36, 0.18) 80%, 
+    rgba(0, 171, 241, 0.12) 100%
+  );
+  background-size: 300% 300%;
+  animation: radianceFluid 15s ease infinite;
+}
+
+[data-theme="radiance"] .ambient-grid {
+  opacity: 0.22;
+  background-image: 
+    linear-gradient(rgba(0, 171, 241, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 171, 241, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(242, 96, 36, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 96, 36, 0.08) 1px, transparent 1px);
+}
+
+[data-theme="radiance"] .glow-orb {
+  opacity: 0.28;
+  mix-blend-mode: multiply; /* Rich color blending on light canvas */
+  filter: blur(140px);
+}
+
+[data-theme="radiance"] .interactive-glow {
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(0, 171, 241, 0.12) 0%,
+    rgba(242, 96, 36, 0.06) 60%,
+    transparent 100%
+  );
+}
+
+/* Radiance Typography & Section Inversions */
+[data-theme="radiance"] .gradient-text {
+  background: linear-gradient(135deg, #0b1329 20%, var(--accent-primary) 65%, var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="radiance"] .logo-text {
+  background: linear-gradient(135deg, #0b1329 40%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="radiance"] header.scrolled {
+  background: rgba(240, 247, 252, 0.85);
+  border-bottom: 1px solid rgba(15, 22, 36, 0.08);
+}
+
+/* Radiance Form Inputs & Component Controls */
+[data-theme="radiance"] .form-input {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(15, 22, 36, 0.1);
+  color: var(--text-main);
+}
+
+[data-theme="radiance"] .form-input::placeholder {
+  color: var(--text-dim);
+}
+
+[data-theme="radiance"] .form-input:focus {
+  background: #ffffff;
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 15px rgba(242, 96, 36, 0.12);
+}
+
+[data-theme="radiance"] .btn-secondary {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(15, 22, 36, 0.15);
+  color: var(--text-main);
+}
+
+[data-theme="radiance"] .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: var(--accent-primary);
+  color: var(--text-main);
+}
+
+[data-theme="radiance"] .india-map-path {
+  fill: rgba(255, 255, 255, 0.65);
+  stroke: rgba(15, 22, 36, 0.08);
+}
+
+[data-theme="radiance"] .india-map-internal {
+  stroke: rgba(15, 22, 36, 0.04);
+}
+
+/* Dynamic liquid movement animation */
+@keyframes radianceFluid {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* --- RESET & BASIC STYLES --- */
 * {
   margin: 0;
@@ -245,6 +362,31 @@ a {
   transform: translateY(-2px);
 }
 
+/* Theme Toggle Button Style */
+.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+  vertical-align: middle;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+  transform: rotate(15deg) scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 171, 241, 0.4);
+}
+
 /* --- HEADER / NAVIGATION --- */
 header {
   position: fixed;
@@ -330,6 +472,9 @@ nav a:hover::after {
 
 .nav-cta {
   margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 /* Mobile Menu Button */
@@ -990,6 +1135,17 @@ input[type=range].slider::-webkit-slider-thumb:hover {
   height: 100%;
   max-width: 440px;
   max-height: 500px;
+}
+
+.india-map-path {
+  fill: rgba(15, 23, 42, 0.8);
+  stroke: rgba(255, 255, 255, 0.06);
+  transition: fill var(--transition-medium), stroke var(--transition-medium);
+}
+
+.india-map-internal {
+  stroke: rgba(255, 255, 255, 0.04);
+  transition: stroke var(--transition-medium);
 }
 
 /* Responsive glowing dots representing cities */
@@ -1783,7 +1939,7 @@ footer {
   font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 800;
-  color: white;
+  color: var(--text-main);
   letter-spacing: -0.01em;
 }
 

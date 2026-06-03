@@ -506,3 +506,38 @@ contactForm.addEventListener('submit', (e) => {
     alert('Failed to submit campaign brief: ' + error.message);
   });
 });
+
+// --- 9. THEME / APPEARANCE STYLE TOGGLE ---
+const themeToggleBtn = document.getElementById('theme-toggle');
+
+if (themeToggleBtn) {
+  // Read initial theme preference or default to 'dark'
+  const initialTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', initialTheme);
+  updateThemeIcon(initialTheme);
+
+  themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const newTheme = currentTheme === 'dark' ? 'radiance' : 'dark';
+    
+    // Set theme attribute on root html element
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+  });
+}
+
+function updateThemeIcon(theme) {
+  if (!themeToggleBtn) return;
+  const icon = themeToggleBtn.querySelector('i');
+  if (icon) {
+    if (theme === 'radiance') {
+      icon.setAttribute('data-lucide', 'sun'); // sun icon for light radiance mode
+    } else {
+      icon.setAttribute('data-lucide', 'moon'); // moon icon for cyber grid dark mode
+    }
+    // Redraw Lucide icons
+    lucide.createIcons();
+  }
+}
+
