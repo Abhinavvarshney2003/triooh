@@ -25,6 +25,10 @@
   <!-- Styling Sheet -->
   <link rel="stylesheet" href="./styles.css">
 
+  <!-- Leaflet.js Interactive Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
   <!-- Lucide Icons (Loaded via CDN for modern premium icons) -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -435,41 +439,8 @@
       <div class="coverage-layout">
         <!-- SVG Map Plot -->
         <div class="coverage-map-wrapper glass-panel">
-          <div class="map-svg-container" id="delhi-map-container">
-            <!-- Delhi NCR map backdrop with elegant clean SVG lines -->
-            <svg viewBox="0 0 400 400"
-              style="width:100%; height:100%; filter: drop-shadow(0 0 12px rgba(0, 171, 241, 0.15));">
-              <!-- Delhi NCT boundary trace contour -->
-              <path class="india-map-path"
-                d="M180,90 L208,107 L226,96 L244,124 L241,133 L256,133 L260,146 L273,146 L280,154 L273,178 L291,208 L266,252 L254,260 L249,282 L234,312 L225,334 L216,370 L213,370 L210,344 L198,318 L180,314 L171,296 L164,286 L150,277 L153,246 L141,234 L152,203 L172,176 Z"
-                stroke-width="2.5" />
-              <!-- Yamuna River internal path -->
-              <path class="india-map-internal"
-                d="M190,130 Q210,170 230,210 T270,240" fill="none"
-                stroke-width="1.5" />
-            </svg>
-
-            <!-- Map pins placed absolute in percentage via CSS -->
-            <div class="map-pin pin-connaught active" data-target-city="connaught-place">
-              <div class="pin-pulse"></div>
-              <div class="pin-core"></div>
-            </div>
-
-            <div class="map-pin pin-igi" data-target-city="igi-airport">
-              <div class="pin-pulse"></div>
-              <div class="pin-core"></div>
-            </div>
-
-            <div class="map-pin pin-cyber" data-target-city="cyber-city">
-              <div class="pin-pulse"></div>
-              <div class="pin-core"></div>
-            </div>
-
-            <div class="map-pin pin-noida" data-target-city="noida-expressway">
-              <div class="pin-pulse"></div>
-              <div class="pin-core"></div>
-            </div>
-          </div>
+          <!-- Live Interactive Delhi NCR Map powered by Leaflet.js -->
+          <div id="coverage-map"></div>
         </div>
 
         <!-- Tooltip City Details card -->

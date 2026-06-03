@@ -292,12 +292,11 @@ personaSelectors.forEach(card => {
 calculatePlan();
 
 
-// --- 6. INTERACTIVE INDIA COVERAGE MAP ---
-const mapPins = document.querySelectorAll('.map-pin');
+// --- 6. INTERACTIVE DELHI NCR LEAFLET MAP ---
 const mapPlaceholder = document.getElementById('map-placeholder-widget');
 const mapDetailCard = document.getElementById('map-city-data-widget');
 
-// City data specifications
+// City data specifications with real geographic coordinates
 const mapData = {
   'connaught-place': {
     city: 'Connaught Place',
@@ -306,7 +305,9 @@ const mapData = {
     reach: '1.5M Weekly',
     dwell: '5.5 Mins',
     lift: '+18% Peak',
-    locations: ['Inner Circle LEDs', 'Outer Ring Road Gantries', 'Palika Bazaar Portals', 'Janpath Digital Bulletins']
+    locations: ['Inner Circle LEDs', 'Outer Ring Road Gantries', 'Palika Bazaar Portals', 'Janpath Digital Bulletins'],
+    coords: [28.6304, 77.2177],
+    pinClass: 'pin-connaught'
   },
   'igi-airport': {
     city: 'IGI Airport T3',
@@ -315,7 +316,9 @@ const mapData = {
     reach: '2.8M Weekly',
     dwell: '8.0 Mins',
     lift: '+22% Peak',
-    locations: ['T3 Arrivals Digital Totems', 'T3 Departure Pillar LEDs', 'Baggage Claim Videowalls', 'Duty Free Walkway Displays']
+    locations: ['T3 Arrivals Digital Totems', 'T3 Departure Pillar LEDs', 'Baggage Claim Videowalls', 'Duty Free Walkway Displays'],
+    coords: [28.5562, 77.1000],
+    pinClass: 'pin-igi'
   },
   'cyber-city': {
     city: 'Cyber City NH-8',
@@ -324,7 +327,9 @@ const mapData = {
     reach: '2.1M Weekly',
     dwell: '6.2 Mins',
     lift: '+20% Peak',
-    locations: ['Cyber Hub Cyberwalk LEDs', 'DLF Phase II & III Portals', 'NH-8 Toll Gate Gantries', 'Rapid Metro Station Displays']
+    locations: ['Cyber Hub Cyberwalk LEDs', 'DLF Phase II & III Portals', 'NH-8 Toll Gate Gantries', 'Rapid Metro Station Displays'],
+    coords: [28.4950, 77.0878],
+    pinClass: 'pin-cyber'
   },
   'noida-expressway': {
     city: 'Noida Expressway',
@@ -333,7 +338,9 @@ const mapData = {
     reach: '1.2M Weekly',
     dwell: '4.5 Mins',
     lift: '+15% Peak',
-    locations: ['DND Flyway Gantries', 'Sector 18 Market LEDs', 'Film City Linkway Portals', 'Noida Greater Link LEDs']
+    locations: ['DND Flyway Gantries', 'Sector 18 Market LEDs', 'Film City Linkway Portals', 'Noida Greater Link LEDs'],
+    coords: [28.5355, 77.3450],
+    pinClass: 'pin-noida'
   }
 };
 
@@ -345,19 +352,90 @@ const detailCityDwell = document.getElementById('detail-city-dwell');
 const detailCityLift = document.getElementById('detail-city-lift');
 const detailCityLocations = document.getElementById('detail-city-locations');
 
+// --- Initialize Leaflet Map ---
+const delhiCenter = [28.55, 77.18];
+const coverageMap = L.map('coverage-map', {
+  center: delhiCenter,
+  zoom: 11,
+  zoomControl: true,
+  scrollWheelZoom: false,  // Prevent accidental scroll hijack
+  attributionControl: false
+});
+
+// Tile layer URLs
+const DARK_TILES = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+const LIGHT_TILES = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+
+// Determine initial theme and set matching tile layer
+let currentTileLayer = null;
+
+function setMapTiles(theme) {
+  const tileUrl = theme === 'radiance' ? LIGHT_TILES : DARK_TILES;
+  if (currentTileLayer) {
+    coverageMap.removeLayer(currentTileLayer);
+  }
+  currentTileLayer = L.tileLayer(tileUrl, {
+    maxZoom: 18,
+    subdomains: 'abcd'
+  }).addTo(coverageMap);
+}
+
+// Set initial tiles based on current theme
+const initTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+setMapTiles(initTheme);
+
+// --- Create Custom Markers ---
+const leafletMarkers = {};
+
+function createPinIcon(pinClass) {
+  return L.divIcon({
+    className: `custom-map-pin`,
+    html: `<div class="map-pin ${pinClass}" style="position:relative;">
+             <div class="pin-pulse"></div>
+             <div class="pin-core"></div>
+           </div>`,
+    iconSize: [28, 28],
+    iconAnchor: [14, 14]
+  });
+}
+
+// Place markers on the map
+Object.keys(mapData).forEach(cityKey => {
+  const city = mapData[cityKey];
+  const marker = L.marker(city.coords, {
+    icon: createPinIcon(city.pinClass)
+  }).addTo(coverageMap);
+
+  marker.on('click', () => {
+    activateMapCity(cityKey);
+  });
+
+  leafletMarkers[cityKey] = marker;
+});
+
+// --- Activate City Detail Panel ---
 function activateMapCity(cityKey) {
-  // Update Pin visual statuses
-  mapPins.forEach(p => p.classList.remove('active'));
-  const activePin = document.querySelector(`.map-pin[data-target-city="${cityKey}"]`);
-  if (activePin) activePin.classList.add('active');
+  // Remove active class from all marker pin elements
+  document.querySelectorAll('.custom-map-pin .map-pin').forEach(p => p.classList.remove('active'));
+
+  // Add active to selected marker
+  const selectedMarker = leafletMarkers[cityKey];
+  if (selectedMarker) {
+    const markerEl = selectedMarker.getElement();
+    if (markerEl) {
+      const pinDiv = markerEl.querySelector('.map-pin');
+      if (pinDiv) pinDiv.classList.add('active');
+    }
+    // Smooth pan to the clicked location
+    coverageMap.panTo(mapData[cityKey].coords, { animate: true, duration: 0.5 });
+  }
 
   // Load details
   const cData = mapData[cityKey];
   if (cData) {
     mapPlaceholder.style.display = 'none';
     mapDetailCard.classList.add('active');
-    
-    // Transition variables
+
     detailCityName.textContent = cData.city;
     detailCityRegion.textContent = cData.region;
     detailCityScreens.textContent = cData.screens;
@@ -376,16 +454,8 @@ function activateMapCity(cityKey) {
   }
 }
 
-// Add Map Pin Listeners
-mapPins.forEach(pin => {
-  pin.addEventListener('click', () => {
-    const cityKey = pin.dataset.targetCity;
-    activateMapCity(cityKey);
-  });
-});
-
-// Auto-activate Delhi on load to showcase detail immediately
-activateMapCity('delhi');
+// Auto-activate Connaught Place on load
+activateMapCity('connaught-place');
 
 
 // --- 7. PORTFOLIO MEDIA GALLERY CAROUSEL ---
@@ -514,6 +584,9 @@ if (themeToggleBtn) {
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
+
+    // Sync Leaflet map tiles with the new theme
+    setMapTiles(newTheme);
   });
 }
 
