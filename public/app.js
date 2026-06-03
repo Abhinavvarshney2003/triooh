@@ -154,8 +154,7 @@ const plannerConfig = {
     mumbai: { weight: 1.25, lift: 5 },
     delhi: { weight: 1.2, lift: 4 },
     bangalore: { weight: 1.15, lift: 3 },
-    pune: { weight: 1.0, lift: 2 },
-    hyderabad: { weight: 1.1, lift: 3 }
+    kolkata: { weight: 1.1, lift: 3 }
   },
   personas: {
     professionals: { 
@@ -327,23 +326,14 @@ const mapData = {
     lift: '+16% Peak',
     locations: ['Outer Ring Road Bulletins', 'Electronic City Flyover Portals', 'Kempegowda Airport Arrivals', 'Indiranagar Hubs']
   },
-  pune: {
-    city: 'Pune',
-    region: 'Industrial & Tech Hub',
-    screens: '320+',
-    reach: '1.8M Weekly',
-    dwell: '3.8 Mins',
-    lift: '+12% Peak',
-    locations: ['Hinjewadi IT Gates', 'Koregaon Park Junctions', 'Pune-Mumbai Expressway Portals', 'Viman Nagar Lifestyle Malls']
-  },
-  hyderabad: {
-    city: 'Hyderabad',
-    region: 'Deccan Tech Hub',
-    screens: '410+',
-    reach: '2.4M Weekly',
-    dwell: '4.2 Mins',
+  kolkata: {
+    city: 'Kolkata',
+    region: 'Cultural & East India Hub',
+    screens: '450+',
+    reach: '2.8M Weekly',
+    dwell: '4.0 Mins',
     lift: '+15% Peak',
-    locations: ['HITEC City Cyber Towers', 'RGIA Airport Terminals', 'Gachibowli Outer Ringroad', 'Jubilee Hills Hubs']
+    locations: ['Howrah Bridge Junctions', 'Park Street High-Streets', 'NSCBI Airport Terminals', 'Salt Lake Sector V Hubs']
   }
 };
 

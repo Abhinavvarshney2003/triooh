@@ -1207,12 +1207,10 @@ input[type=range].slider::-webkit-slider-thumb:hover {
   border-color: var(--accent-tertiary);
 }
 
-/* Coordinate coordinates for India map projection mock */
-.pin-delhi { top: 31%; left: 37%; }
-.pin-mumbai { top: 62%; left: 24%; }
-.pin-bangalore { top: 78%; left: 35%; }
-.pin-pune { top: 66%; left: 27%; }
-.pin-hyderabad { top: 70%; left: 38%; }
+.pin-delhi { top: 32%; left: 45%; }
+.pin-mumbai { top: 62%; left: 41.5%; }
+.pin-bangalore { top: 76%; left: 48.5%; }
+.pin-kolkata { top: 50%; left: 71%; }
 
 /* Map Tooltip Detail Card */
 .map-detail-card {
