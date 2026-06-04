@@ -84,10 +84,10 @@ setTimeout(type, 500);
 // --- 4. COUNT-UP STATS ANIMATION ---
 const statsSection = document.querySelector('.stats');
 const statElements = [
-  { id: 'stat-screens', target: 200000, suffix: '+', current: 0 },
-  { id: 'stat-billboards', target: 100000, suffix: '+', current: 0 },
-  { id: 'stat-cities', target: 15, suffix: '', current: 0 },
-  { id: 'stat-billing', target: 750, suffix: '+ Cr', current: 0 }
+  { id: 'stat-screens', target: 50, suffix: 'M+', current: 0 },
+  { id: 'stat-billboards', target: 125, suffix: '+', current: 0 },
+  { id: 'stat-cities', target: 450, suffix: '+', current: 0 },
+  { id: 'stat-billing', target: 5000, suffix: '+', current: 0 }
 ];
 
 let statsAnimated = false;
@@ -381,7 +381,7 @@ function setMapTiles(theme) {
 }
 
 // Set initial tiles based on current theme
-const initTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+const initTheme = document.documentElement.getAttribute('data-theme') || 'radiance';
 setMapTiles(initTheme);
 
 // --- Create Custom Markers ---
@@ -572,12 +572,12 @@ const themeToggleBtn = document.getElementById('theme-toggle');
 
 if (themeToggleBtn) {
   // Read initial theme preference or default to 'dark'
-  const initialTheme = localStorage.getItem('theme') || 'dark';
+  const initialTheme = localStorage.getItem('theme') || 'radiance';
   document.documentElement.setAttribute('data-theme', initialTheme);
   updateThemeIcon(initialTheme);
 
   themeToggleBtn.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'radiance';
     const newTheme = currentTheme === 'dark' ? 'radiance' : 'dark';
     
     // Set theme attribute on root html element
@@ -604,3 +604,75 @@ function updateThemeIcon(theme) {
   }
 }
 
+
+// --- 10. SPA ROUTING & SMOOTH SCROLLING ---
+document.addEventListener('DOMContentLoaded', () => {
+  // Handle clicking on navigation links
+  const navLinks = document.querySelectorAll('a[href^="/"]');
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Allow external links (if any) to behave normally
+      if (link.getAttribute('target') === '_blank') return;
+      
+      e.preventDefault();
+      const path = new URL(link.href).pathname; // e.g. "/home"
+      const sectionId = path === '/' ? 'home' : path.substring(1); // e.g. "home"
+      
+      const targetElement = document.getElementById(sectionId);
+      if (targetElement) {
+        // Push state to browser history
+        window.history.pushState(null, '', path);
+        
+        // Smooth scroll to section, offset by header height
+        const headerOffset = document.getElementById('main-header').offsetHeight || 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        const navUl = document.querySelector('nav ul');
+        if (navUl && navUl.classList.contains('active')) {
+          navUl.classList.remove('active');
+        }
+      } else if (path === '/home') {
+        // Fallback for /home if id="home" isn't strictly on the first section
+        window.history.pushState(null, '', path);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Handle browser back/forward buttons
+  window.addEventListener('popstate', () => {
+    const path = window.location.pathname;
+    const sectionId = path === '/' ? 'home' : path.substring(1);
+    const targetElement = document.getElementById(sectionId);
+    if (targetElement) {
+      const headerOffset = document.getElementById('main-header').offsetHeight || 80;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    } else if (path === '/home' || path === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  // Handle direct load (e.g. user hits enter on http://localhost:3000/planner)
+  setTimeout(() => {
+    const path = window.location.pathname;
+    if (path !== '/' && path !== '/home') {
+      const sectionId = path.substring(1);
+      const targetElement = document.getElementById(sectionId);
+      if (targetElement) {
+        const headerOffset = document.getElementById('main-header').offsetHeight || 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    }
+  }, 300); // small delay to ensure rendering before scroll jump
+});

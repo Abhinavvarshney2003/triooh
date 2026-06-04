@@ -72,8 +72,8 @@ app.post('/api/proposal', (req, res) => {
   }
 });
 
-// Serve index.html as a fallback for the root route
-app.get('/', (req, res) => {
+// Serve index.html as a fallback for all SPA routes
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 

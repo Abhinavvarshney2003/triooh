@@ -47,24 +47,32 @@
   <!-- NAVIGATION HEADER -->
   <header id="main-header">
     <div class="container nav-wrapper">
-      <a href="#home" class="logo" id="header-logo-link">
+      <a href="/home" class="logo" id="header-logo-link">
         <img src="./logo.png" alt="TRIOOH Company Logo" id="brand-logo-img">
-        <span class="logo-text">TRIOOH</span>
+        <span class="logo-text"></span>
       </a>
 
       <nav id="nav-menu">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Capabilities</a></li>
-          <li><a href="#planner">Media Planner</a></li>
-          <li><a href="#coverage">Network Map</a></li>
-          <li><a href="#gallery">Media Showcase</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/home">Home</a></li>
+          <li class="nav-item-dropdown">
+            <a href="/services" class="nav-link-dropdown">Capabilities <i data-lucide="chevron-down" style="width: 14px; height: 14px; margin-left: 4px; vertical-align: -2px;"></i></a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="/analytics">Data & Analytics</a></li>
+              <li><a href="/platform-usps">The Competitive Edge</a></li>
+              <li><a href="/brand-lift">Brand Lift Study</a></li>
+              <li><a href="/strategic-view">Strategic View</a></li>
+            </ul>
+          </li>
+          <li><a href="/planner">Media Planner</a></li>
+          <li><a href="/coverage">Network Map</a></li>
+          <li><a href="/gallery">Media Showcase</a></li>
+          <li><a href="/contact">Contact</a></li>
           <li class="nav-cta">
             <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme Appearance">
               <i data-lucide="moon"></i>
             </button>
-            <a href="#planner" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Build
+            <a href="/planner" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Build
               Plan</a>
           </li>
         </ul>
@@ -80,53 +88,15 @@
   <section class="hero" id="home">
     <div class="container hero-grid">
       <div class="hero-content">
-        <div class="hero-badge">
-          <span></span> Next-Gen Outdoor Media
-        </div>
         <h1 class="hero-title">
           <span class="gradient-text">Out-of-Home Media,</span><br>
           <span class="brand-gradient">Powered by Data.</span>
         </h1>
         <p class="hero-description">
-          We help premium brands make intelligent, high-impact advertising decisions. Experience transparent,
-          measurable, and highly immersive campaigns on India's top OOH and <span class="typing-container"
-            id="typing-text">Digital Screens</span>.
+          18+ years of transforming Out-of-Home advertising with cutting-edge technology. We deliver real impact in
+          data-driven outdoor advertising, combining verified impressions, audience insights, and tracking
+          across India's top <span class="typing-container" id="typing-text">Digital Screens</span>.
         </p>
-        <div class="hero-actions">
-          <a href="#planner" class="btn btn-primary">
-            Launch Planner <i data-lucide="compass"></i>
-          </a>
-          <a href="#coverage" class="btn btn-secondary">
-            Explore Coverage <i data-lucide="map-pin"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <!-- Floating HUD Elements -->
-        <div class="floating-hud hud-1 glass-panel">
-          <p class="hud-title">Pan-India Billboards</p>
-          <div class="hud-value">100,000+ <span><i data-lucide="trending-up" style="display:inline; width:16px;"></i>
-              Active</span></div>
-        </div>
-
-        <div class="floating-hud hud-2 glass-panel">
-          <p class="hud-title">Active Smart Screens</p>
-          <div class="hud-value">200,000+ <span style="color:#06b6d4;">OOH</span></div>
-        </div>
-
-        <!-- Premium Showcase Screen Mockup -->
-        <div class="mock-billboard glass-panel">
-          <img src="./hero_billboard.png" alt="Premium Roadside Digital Billboard" id="hero-showcase-img">
-          <div class="mock-billboard-screen">
-            <span class="screen-badge">Premium Highway Hub</span>
-            <h3 class="screen-title">Cyber City Smart Display</h3>
-            <div class="screen-meta">
-              <span><i data-lucide="eye" style="width: 14px;"></i> 1.2M Weekly Impressions</span>
-              <span><i data-lucide="map-pin" style="width: 14px;"></i> Gurugram Delhi NCR</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -135,20 +105,20 @@
   <section class="stats">
     <div class="container stats-grid">
       <div class="stat-card glass-panel">
-        <div class="stat-number brand-gradient" id="stat-screens">200,000+</div>
-        <div class="stat-label">Smart OOH Screens</div>
+        <div class="stat-number brand-gradient" id="stat-screens">50M+</div>
+        <div class="stat-label">Daily Audience Reach</div>
       </div>
       <div class="stat-card glass-panel">
-        <div class="stat-number brand-gradient" id="stat-billboards">100,000+</div>
-        <div class="stat-label">Premium Billboards</div>
+        <div class="stat-number brand-gradient" id="stat-billboards">125+</div>
+        <div class="stat-label">Publisher Partners Pan-India</div>
       </div>
       <div class="stat-card glass-panel">
-        <div class="stat-number brand-gradient" id="stat-cities">15</div>
-        <div class="stat-label">Pan-India Offices</div>
+        <div class="stat-number brand-gradient" id="stat-cities">450+</div>
+        <div class="stat-label">Active Brand Accounts</div>
       </div>
       <div class="stat-card glass-panel">
-        <div class="stat-number brand-gradient" id="stat-billing">₹750+ Cr</div>
-        <div class="stat-label">Annual Billing</div>
+        <div class="stat-number brand-gradient" id="stat-billing">5,000+</div>
+        <div class="stat-label">Premium OOH Assets</div>
       </div>
     </div>
   </section>
@@ -249,40 +219,447 @@
   <section class="features" id="services">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title"><span class="gradient-text">Our Core Capabilities</span></h2>
-        <p class="section-subtitle">Bridging high-impact physical presence with precision digital audience intelligence
-          across the country.</p>
+        <h2 class="section-title"><span class="gradient-text">Our Capabilities</span></h2>
+        <p class="section-subtitle">We seamlessly merge traditional outdoor advertising scale with digital precision,
+          giving your brand unprecedented visibility and measurable returns.</p>
       </div>
 
       <div class="features-grid">
-        <!-- Capability 1 -->
+        <!-- Capability 1: Media Owner -->
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="shield-check"></i>
+          </div>
+          <h3 class="feature-title">Media Owner</h3>
+          <p class="feature-text">Owned premium DOOH inventory across Delhi NCR for better control, pricing &amp;
+            impact.
+            Faster execution, flexibility &amp; transparent delivery backed by 20 years of OOH leadership.</p>
+        </div>
+
+        <!-- Capability 2: Data-Led Planning -->
         <div class="feature-card glass-panel">
           <div class="feature-icon-wrapper">
             <i data-lucide="bar-chart-3"></i>
           </div>
-          <h3 class="feature-title">Data-Led Geospatial Planning</h3>
-          <p class="feature-text">Audience-driven execution powered by geospatial intelligence, footfall patterns,
-            mobile SDK mobility insights, and precision polygon location mapping.</p>
+          <h3 class="feature-title">Data-Led Planning</h3>
+          <p class="feature-text">Audience-driven planning using footfall, mobility &amp; behavior data across 125+
+            publishers
+            pan-India. Smart inventory selection with unified measurement, insights &amp; optimization.</p>
         </div>
 
-        <!-- Capability 2 -->
+        <!-- Capability 3: Programmatic DOOH -->
         <div class="feature-card glass-panel">
           <div class="feature-icon-wrapper">
             <i data-lucide="monitor"></i>
           </div>
-          <h3 class="feature-title">Google DV360 OOH Integration</h3>
-          <p class="feature-text">Real-time programmatic automated buying with dynamic creatives. Contextual,
-            time-based, and performance-driven targeting with unified DSP integration.</p>
+          <h3 class="feature-title">Programmatic OOH</h3>
+          <p class="feature-text">Seamless Google DV360 integration enabling real-time automated buying with dynamic
+            creatives.
+            Contextual, time-based &amp; performance-driven targeting with impression-level reporting &amp; attribution.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA & ANALYTICS CAPABILITIES -->
+  <section class="analytics" id="analytics">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="gradient-text">Data & Analytics</span></h2>
+        <p class="section-subtitle">Measure what matters. Our proprietary analytics stack delivers full-funnel
+          visibility from exposure to conversion.</p>
+      </div>
+
+      <div class="analytics-grid">
+        <!-- Card 1: Audience Tracking -->
+        <div class="analytics-card glass-panel" id="analytics-card-audience">
+          <div class="analytics-card-header">
+            <div class="analytics-icon" style="color: var(--accent-secondary);">
+              <i data-lucide="trending-up"></i>
+            </div>
+            <h3 class="analytics-card-title">Audience Tracking</h3>
+          </div>
+          <p class="analytics-card-desc">Precision tracking of audience movement patterns and exposure to OOH media.</p>
+          <img src="./analytics_audience.png" alt="Audience Tracking Technology" class="analytics-card-img">
         </div>
 
-        <!-- Capability 3 -->
-        <div class="feature-card glass-panel">
-          <div class="feature-icon-wrapper">
-            <i data-lucide="target"></i>
+        <!-- Card 2: Performance Metrics -->
+        <div class="analytics-card glass-panel" id="analytics-card-performance">
+          <div class="analytics-card-header">
+            <div class="analytics-icon" style="color: var(--accent-primary);">
+              <i data-lucide="bar-chart-2"></i>
+            </div>
+            <h3 class="analytics-card-title">Performance Metrics</h3>
           </div>
-          <h3 class="feature-title">Owned Media Leadership</h3>
-          <p class="feature-text">Over 18 years of sector leadership. Direct access to premium high-street and transit
-            inventories ensuring the best control, pricing, and transparency.</p>
+          <p class="analytics-card-desc">Campaign performance tracking with detailed metrics and insights.</p>
+          <img src="./analytics_performance.png" alt="Performance Analytics Dashboard" class="analytics-card-img">
+        </div>
+
+        <!-- Card 3: Attribution Models -->
+        <div class="analytics-card glass-panel" id="analytics-card-attribution">
+          <div class="analytics-card-header">
+            <div class="analytics-icon" style="color: var(--accent-tertiary);">
+              <i data-lucide="timer"></i>
+            </div>
+            <h3 class="analytics-card-title">Attribution Models</h3>
+          </div>
+          <p class="analytics-card-desc">Connect offline media exposure to online behavior and conversions.</p>
+          <img src="./analytics_attribution.png" alt="Attribution Models and Reports" class="analytics-card-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM USPS: DATA-DRIVEN CAPABILITIES -->
+  <section class="platform-usps" id="platform-usps">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="gradient-text">The Competitive Edge</span></h2>
+        <p class="section-subtitle">Bridging offline impact with digital precision, making OOH smarter, measurable, and
+          ROI-driven.</p>
+      </div>
+
+      <!-- Feature 1: Data Driven Planning -->
+      <div class="usp-row">
+        <div class="usp-content">
+          <h3 class="usp-title">DATA DRIVEN <span class="brand-gradient">PLANNING AND BUYING</span></h3>
+          <p class="usp-description">
+            Add Audience Intelligence to your OOH media buying and planning. Move from intuitive planning to DATA-led
+            planning using cutting-edge geospatial tracking.
+          </p>
+          <ul class="usp-list">
+            <li><i data-lucide="check-circle-2"></i> Heatmap &amp; footfall density overlays</li>
+            <li><i data-lucide="check-circle-2"></i> Mobility and behavior intelligence</li>
+            <li><i data-lucide="check-circle-2"></i> Smart polygon location mapping</li>
+          </ul>
+        </div>
+        <div class="usp-visual">
+          <img src="./usp_planning.png" alt="Data Driven Planning Heatmap Dashboard" class="usp-img glass-panel">
+        </div>
+      </div>
+
+      <!-- Feature 2: Daily Monitoring Dashboard -->
+      <div class="usp-row reverse-row">
+        <div class="usp-content">
+          <h3 class="usp-title">Daily <span class="brand-gradient">Monitoring</span></h3>
+          <p class="usp-description">
+            Real-time, transparent execution tracking. Monitor every site's status across cities with verified long
+            shots, close shots, and night shots directly from our portal.
+          </p>
+          <ul class="usp-list">
+            <li><i data-lucide="check-circle-2"></i> Live photo verification updates</li>
+            <li><i data-lucide="check-circle-2"></i> Cross-city campaign management</li>
+            <li><i data-lucide="check-circle-2"></i> Seamless, transparent reporting</li>
+          </ul>
+        </div>
+        <div class="usp-visual">
+          <!-- Interactive Dummy Dashboard -->
+          <div class="dummy-dashboard glass-panel">
+            <div class="dummy-dash-header">
+              <div class="dash-controls">
+                <div class="dash-select">
+                  <label>Select City</label>
+                  <select disabled>
+                    <option>Delhi NCR</option>
+                  </select>
+                </div>
+                <div class="dash-select">
+                  <label>Start Date</label>
+                  <input type="text" value="09-11-2026" disabled>
+                </div>
+              </div>
+              <button class="btn btn-primary dash-btn">Search</button>
+            </div>
+
+            <div class="dummy-table-wrapper">
+              <table class="dummy-table">
+                <thead>
+                  <tr>
+                    <th>Site Location</th>
+                    <th>City</th>
+                    <th>Medium</th>
+                    <th>Long Shot</th>
+                    <th>Close Shot</th>
+                    <th>Night Shot</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Cyber City Hub NH-8</td>
+                    <td>Delhi</td>
+                    <td>Digital Portal</td>
+                    <td><i data-lucide="image" class="status-icon green"></i></td>
+                    <td><i data-lucide="image" class="status-icon green"></i></td>
+                    <td><i data-lucide="image" class="status-icon green"></i></td>
+                  </tr>
+                  <tr>
+                    <td>Connaught Place Inner Circle</td>
+                    <td>Delhi</td>
+                    <td>LED Screen</td>
+                    <td><i data-lucide="image" class="status-icon green"></i></td>
+                    <td><i data-lucide="image" class="status-icon green"></i></td>
+                    <td><i data-lucide="clock" class="status-icon yellow"></i></td>
+                  </tr>
+                  <tr>
+                    <td>IGI Airport T3 Arrivals</td>
+                    <td>Delhi</td>
+                    <td>Totem</td>
+                    <td><i data-lucide="image" class="status-icon green"></i></td>
+                    <td><i data-lucide="image" class="status-icon green"></i></td>
+                    <td><i data-lucide="image" class="status-icon green"></i></td>
+                  </tr>
+                  <tr>
+                    <td>Noida Expressway Gantries</td>
+                    <td>Delhi</td>
+                    <td>Billboard</td>
+                    <td><i data-lucide="image" class="status-icon green"></i></td>
+                    <td><i data-lucide="clock" class="status-icon yellow"></i></td>
+                    <td><i data-lucide="clock" class="status-icon yellow"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="dummy-dash-footer">
+              <span>Showing 1 to 4 of 125 entries</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Post Evaluation -->
+      <div class="usp-row">
+        <div class="usp-content">
+          <h3 class="usp-title">POST <span class="brand-gradient">EVALUATION</span></h3>
+          <p class="usp-description">
+            Comprehensive campaign wrap-ups. Understand exactly who saw your ad, when, and where, using deep demographic
+            and footfall trend analysis.
+          </p>
+          <ul class="usp-list">
+            <li><i data-lucide="check-circle-2"></i> Demographic breakdown (Gender, Age)</li>
+            <li><i data-lucide="check-circle-2"></i> Footfall &amp; impression trends</li>
+            <li><i data-lucide="check-circle-2"></i> Actionable ROI insights</li>
+          </ul>
+        </div>
+        <div class="usp-visual">
+          <img src="./usp_evaluation.png" alt="Post Campaign Evaluation Dashboard" class="usp-img glass-panel">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- BRAND LIFT STUDY -->
+  <section class="brand-lift" id="brand-lift">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="gradient-text">Brand Lift Study</span></h2>
+        <p class="section-subtitle">Gauge the true impact of your media campaign using a rigorous Exposed vs. Controlled
+          methodology.</p>
+      </div>
+
+      <!-- Flow Pipeline -->
+      <div class="lift-pipeline">
+        <!-- Step Badges -->
+        <div class="lift-steps-row">
+          <div class="lift-step-badge" style="background: var(--accent-secondary);">Audience Grouping</div>
+          <div class="lift-arrow"><svg width="32" height="24" viewBox="0 0 32 24">
+              <path d="M0 12h28M22 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+            </svg></div>
+          <div class="lift-step-badge" style="background: var(--accent-primary);">Ads Delivered</div>
+          <div class="lift-arrow"><svg width="32" height="24" viewBox="0 0 32 24">
+              <path d="M0 12h28M22 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+            </svg></div>
+          <div class="lift-step-badge" style="background: #ef4444;">Polls</div>
+          <div class="lift-arrow"><svg width="32" height="24" viewBox="0 0 32 24">
+              <path d="M0 12h28M22 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+            </svg></div>
+          <div class="lift-step-badge" style="background: #6366f1;">Analyze Lift</div>
+        </div>
+
+        <!-- Comparison Cards -->
+        <div class="lift-comparison">
+          <div class="lift-group glass-panel lift-exposed">
+            <div class="lift-group-badge exposed-badge">EXPOSED GROUP</div>
+            <div class="lift-group-flow">
+              <div class="lift-flow-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                <span>Audience</span>
+              </div>
+              <div class="lift-flow-arrow">→</div>
+              <div class="lift-flow-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="14" x="2" y="3" rx="2" />
+                  <line x1="8" x2="16" y1="21" y2="21" />
+                  <line x1="12" x2="12" y1="17" y2="21" />
+                </svg>
+                <span>Have seen the Brand's ads</span>
+              </div>
+              <div class="lift-flow-arrow">→</div>
+              <div class="lift-flow-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+                  <path d="M14 2v6h6" />
+                  <path d="M16 13H8" />
+                  <path d="M16 17H8" />
+                  <path d="M10 9H8" />
+                </svg>
+                <span>Survey Question Set 1</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lift-group glass-panel lift-controlled">
+            <div class="lift-group-badge controlled-badge">CONTROLLED GROUP</div>
+            <div class="lift-group-flow">
+              <div class="lift-flow-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                <span>Audience</span>
+              </div>
+              <div class="lift-flow-arrow">→</div>
+              <div class="lift-flow-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m4.9 4.9 14.2 14.2" />
+                </svg>
+                <span>Have NOT seen the Brand's ads</span>
+              </div>
+              <div class="lift-flow-arrow">→</div>
+              <div class="lift-flow-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+                  <path d="M14 2v6h6" />
+                  <path d="M16 13H8" />
+                  <path d="M16 17H8" />
+                  <path d="M10 9H8" />
+                </svg>
+                <span>Survey Question Set 2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result Box -->
+        <div class="lift-result glass-panel">
+          <h4>Brand Lift Result</h4>
+          <p class="lift-formula">ΔR = ((Exposed − Control) / Control) × 100</p>
+          <p class="lift-example">E.g., 25% score for Exposed and 13% for Controlled would mean Relative Lift (ΔR) =
+            ((25−13)/13) × 100 = <strong class="brand-gradient">92%</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGIC VIEW: APPROACH TO PLANNING -->
+  <section class="strategic-view" id="strategic-view">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="gradient-text">Strategic View</span></h2>
+        <p class="section-subtitle">A 360° approach to OOH planning, powered by industry-leading data partnerships.</p>
+      </div>
+
+      <div class="strategy-grid">
+        <div class="strategy-card glass-panel">
+          <div class="strategy-icon" style="color: #ef4444;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" x2="12" y1="20" y2="10" />
+              <line x1="18" x2="18" y1="20" y2="4" />
+              <line x1="6" x2="6" y1="20" y2="16" />
+            </svg>
+          </div>
+          <h4>OOH Plan &amp; ROI Measurement</h4>
+          <p>OOH plan demonstration deriving ROI with full transparency.</p>
+          <span class="strategy-partner">RoadStar</span>
+        </div>
+
+        <div class="strategy-card glass-panel">
+          <div class="strategy-icon" style="color: #f59e0b;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+          </div>
+          <h4>Category Insights</h4>
+          <p>Deep understanding of the category landscape and competitive dynamics.</p>
+          <span class="strategy-partner">GWI</span>
+        </div>
+
+        <div class="strategy-card glass-panel">
+          <div class="strategy-icon" style="color: #06b6d4;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="6" />
+              <circle cx="12" cy="12" r="2" />
+            </svg>
+          </div>
+          <h4>Target Audience Insight</h4>
+          <p>TG demographics &amp; attributes mapping for precision targeting.</p>
+          <span class="strategy-partner">GWI</span>
+        </div>
+
+        <div class="strategy-card glass-panel">
+          <div class="strategy-icon" style="color: #8b5cf6;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+              <path
+                d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+            </svg>
+          </div>
+          <h4>Media Habits</h4>
+          <p>Finding out TG's media consumption pattern for optimal channel mix.</p>
+          <span class="strategy-partner">GWI</span>
+        </div>
+
+        <div class="strategy-card glass-panel">
+          <div class="strategy-icon" style="color: #10b981;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <h4>Arriving at OOH Touchpoints</h4>
+          <p>Identifying the priority touchpoints using our Visibility Index.</p>
+          <span class="strategy-partner">Visibility Index</span>
+        </div>
+
+        <div class="strategy-card glass-panel">
+          <div class="strategy-icon" style="color: #ec4899;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 20h.01" />
+              <path d="M7 20v-4" />
+              <path d="M12 20v-8" />
+              <path d="M17 20V8" />
+              <path d="M22 4v16" />
+            </svg>
+          </div>
+          <h4>Competition Noise Level</h4>
+          <p>Category scan on OOH spends and competitive analysis.</p>
+          <span class="strategy-partner">ADEX</span>
         </div>
       </div>
     </div>
@@ -292,7 +669,7 @@
   <section class="planner" id="planner">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title"><span class="gradient-text">Campaign Planner</span></h2>
+        <h2 class="section-title"><span class="gradient-text">Media Planner</span></h2>
         <p class="section-subtitle">Simulate your TRIOOH campaign. Select variables to generate custom media allocations
           and reach forecasts instantly.</p>
       </div>
@@ -319,6 +696,7 @@
               <div class="city-btn active" data-city="delhi">Delhi NCR</div>
               <div class="city-btn" data-city="bangalore">Bangalore</div>
               <div class="city-btn" data-city="kolkata">Kolkata</div>
+              <div class="city-btn" data-city="hyderabad">Hyderabad</div>
             </div>
           </div>
 
@@ -419,9 +797,13 @@
             </div>
           </div>
 
-          <a href="#contact" class="btn btn-primary" id="planner-submit-cta" style="width: 100%;">
+          <a href="/contact" class="btn btn-primary" id="planner-submit-cta" style="width: 100%;">
             Secure This Custom Plan <i data-lucide="arrow-right"></i>
           </a>
+          <p class="planner-disclaimer">
+            <i data-lucide="info" style="width:14px; height:14px; display:inline; vertical-align:-2px; margin-right:4px;"></i>
+            Values shown are simulated estimates for demonstration purposes only. Actual campaign metrics may vary based on market conditions and inventory availability.
+          </p>
         </div>
       </div>
     </div>
@@ -431,7 +813,7 @@
   <section class="coverage" id="coverage">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title"><span class="gradient-text">Our OOH Network Coverage</span></h2>
+        <h2 class="section-title"><span class="gradient-text">Network Map</span></h2>
         <p class="section-subtitle">We have strategically established high-impact networks across key Indian
           metropolitan growth nodes.</p>
       </div>
@@ -499,7 +881,7 @@
   <section class="gallery" id="gallery">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title"><span class="gradient-text">Recent Success Campaigns</span></h2>
+        <h2 class="section-title"><span class="gradient-text">Media Showcase</span></h2>
         <p class="section-subtitle">A showcase of high-impact programmatic and static executions for global market
           leaders in major cities.</p>
       </div>
@@ -716,7 +1098,7 @@
     <div class="container footer-grid">
       <!-- Brand column -->
       <div class="footer-brand">
-        <a href="#home" class="footer-logo">
+        <a href="/home" class="footer-logo">
           <img src="./logo.png" alt="TRIOOH Company Logo">
           <span class="logo-text">TRIOOH</span>
         </a>
@@ -730,35 +1112,47 @@
       <div class="footer-links-col">
         <h4 class="footer-col-title">Navigation</h4>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Our Capabilities</a></li>
-          <li><a href="#planner">Campaign Planner</a></li>
-          <li><a href="#coverage">Coverage network</a></li>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/services">Our Capabilities</a></li>
+          <li><a href="/planner">Campaign Planner</a></li>
+          <li><a href="/coverage">Coverage network</a></li>
         </ul>
       </div>
 
-      <!-- Newsletter column -->
-      <div class="footer-newsletter">
-        <h4 class="footer-col-title">Join OOH Insights</h4>
-        <p class="newsletter-text">Subscribe to our monthly mobility and digital outdoor traffic insight reports across
-          India.</p>
-        <form class="newsletter-form" id="newsletter-form"
-          onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
-          <input type="email" class="newsletter-input" placeholder="Your work email" required
-            aria-label="Newsletter email input">
-          <button type="submit" class="newsletter-btn">Subscribe</button>
-        </form>
+      <!-- Contact column -->
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Contact Us</h4>
+        <ul>
+          <li>
+            <a href="tel:+919876543210" style="display:flex; align-items:center; gap:8px;">
+              <i data-lucide="phone" style="width:16px; height:16px;"></i> +91 xxxxx xxxxx
+            </a>
+          </li>
+          <li>
+            <a href="mailto:contact@triooh.com" style="display:flex; align-items:center; gap:8px;">
+              <i data-lucide="mail" style="width:16px; height:16px;"></i> contact@triooh.com
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/triooh/" target="_blank" rel="noopener noreferrer"
+              style="display:flex; align-items:center; gap:8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-linkedin">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg> LinkedIn
+            </a>
+          </li>
+        </ul>
       </div>
+
     </div>
 
     <!-- Bottom credits -->
     <div class="container footer-bottom">
       <p>&copy; 2026 TRIOOH Communications Private Limited. All Rights Reserved.</p>
-      <div class="footer-socials">
-        <a href="#" aria-label="LinkedIn Profile"><i data-lucide="linkedin"></i></a>
-        <a href="#" aria-label="Twitter Profile"><i data-lucide="twitter"></i></a>
-        <a href="#" aria-label="Instagram Profile"><i data-lucide="instagram"></i></a>
-      </div>
     </div>
   </footer>
 
